@@ -17,10 +17,19 @@ export const caseStudies = [
     excerpt: [
       {
         leadLink: { text: 'Volt', href: 'https://apps.apple.com/us/app/volt/id1644756647' },
-        leadSep: ' by Freedom Forever is a lead management and canvassing app built for solar sales teams.',
+        leadSep: ' by ',
+        lead: 'Freedom Forever',
+        text: 'is a lead management and canvassing app built for solar sales teams.',
+        tooltip: {
+          title: 'Background & Context',
+          paragraphs: [
+            'I worked at Freedom Forever—one of the largest residential solar installers in the U.S.—from 2021 to 2026.',
+            'A new law that passed in 2025 lead to cascading bankruptcies in the solar industry and ultimately claimed Freedom Forever. My time there abruptly ended when the company filed for bankruptcy in April of 2026.',
+            'Prior to the bankruptcy, the software team kicked into high gear to compensate for cash flow crunches and reduced staff. These financial challenges accelerated AI adoption. Led by our VP of Product and Engineering, I received a master class and crash course in utilizing AI tools and best practices alongside my fellow product and developer colleagues.',
+          ],
+        },
       },
-      "I was the lead designer on Volt from it\'s origins. Over a few years, I led Volt through two redesigns, designed many new features and enhancements, initiated direct user research, and ultimately developed and coded a new design system and component library for Volt 2.0.",
-      "This case study goes into more detail on the Volt 2.0 rebrand.",
+      "I was the lead designer on Volt from it\'s origins and MVP launch. Over the course of a few years, I led Volt through two redesigns, designed many new features and enhancements, and initiated direct user research. And as our product and engineering AI infrastructure took off, I developed and coded a new design system and component library for Volt 2.0. This case study goes into more detail on the Volt 2.0 rebrand.",
     ],
     image: '/images/volt-hero.webp',
     imageAlt: 'Volt 2.0 — a suite of screens from the redesigned mobile app',
@@ -160,7 +169,7 @@ export const caseStudies = [
     titleSize: 55,
     tagsRight: true,
     excerpt: [
-      "Solar University is an in-house Learning Management System (LMS) kicked off by our PM and a senior developer while I was still heads-down finishing the Volt 2.0 redesign. Building an in-house LMS would have been time prohibitive just a handful of months prior, but with AI we could do it ourselves in a fraction of the time. This also meant the PM and developer could move fast with AI handling the early design scaffolding. In order to provide designs and direction without stalling the rebrand, I conducted a compressed design process: a full UX audit with AI-assisted note-taking, an AI-research and brainstorm session that both validated my instincts and surfaced new ideas, and a working prototype delivered in roughly half a day.",
+      "Solar University is an in-house Learning Management System (LMS) that was kicked off by our PM and a senior developer while I was still heads-down finishing the Volt 2.0 redesign. Building an in-house LMS would have been time prohibitive just a handful of months prior, but with AI we could do it ourselves in a fraction of the time. This also meant the PM and developer could move fast with AI handling the early design scaffolding. In order to provide designs and direction without stalling the rebrand, I conducted a compressed design process: a full UX audit with AI-assisted note-taking, an AI-research and brainstorm session that both validated my instincts and surfaced new ideas, and a working prototype delivered in about a day.",
     ],
     image: '/images/solar-university-hero.png',
     imageAlt: 'Solar University — learning tracks dashboard on a laptop',
@@ -271,9 +280,9 @@ export const caseStudies = [
     excerpt: [
       "Gamification in Volt was a longtime goal based on a fundamental understanding of our users and how sales reps are wired and motivated. I was asked to design motivation and incentive features for Volt at numerous points over the years but beyond the general leaderboard and competitions, gamification features were sidelined for core project management and communication tools.",
       {
-        prefix: "A badge achievements system--integrated with native notifications, an admin tool for managing badge content, and a social wins feed--was just days from shipping when Freedom Forever filed for bankruptcy. This case study is about what lead up to this",
+        prefix: "A badge achievements system—integrated with native notifications, an admin tool for managing badge content, and a social wins feed—was just days from to shipping when Freedom Forever filed for bankruptcy. This case study is about what lead up to this",
         italic: " near ",
-        suffix: "launch: how I used data and research to correct unrealistic badge thresholds and proved my new design system and AI-powered workflow lead to a faster path from design intent to code.",
+        suffix: "launch: how I used data and research to correct unrealistic badge thresholds and proved my new Volt 2.0 design system and AI-powered workflow could lead to a faster, more direct path from design intent to shipped code.",
       },
     ],
     image: '/images/gamification-hero.webp',
