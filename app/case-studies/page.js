@@ -38,7 +38,10 @@ export default async function CaseStudiesPage({ searchParams }) {
             subtitle={study.subtitle}
             tagsRight={study.tagsRight}
             cardImages={study.cardImages ?? null}
+            badgeImages={study.badgeImages ?? null}
             imageOffset={study.imageOffset ?? 0}
+            role={study.role ?? null}
+            scope={study.scope ?? null}
             priority={i === 0}
           />
         ))}

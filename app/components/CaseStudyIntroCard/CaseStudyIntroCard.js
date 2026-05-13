@@ -22,8 +22,11 @@ export default function CaseStudyIntroCard({
   subtitle = null,
   tagsRight = false,
   cardImages = null,
+  badgeImages = null,
   imageOffset = 0,
   priority = false,
+  role = null,
+  scope = null,
 }) {
   const href = `/case-studies/${slug}`;
 
@@ -64,7 +67,9 @@ export default function CaseStudyIntroCard({
           <div className={s.body}>
             {excerpt.map((para, i) => (
               <p key={i}>
-                {typeof para === 'string' ? para : (
+                {typeof para === 'string' ? para : para.italic ? (
+                  <>{para.prefix}<em>{para.italic}</em>{para.suffix}</>
+                ) : (
                   <>
                     {para.leadLink ? (
                       <>
@@ -77,12 +82,14 @@ export default function CaseStudyIntroCard({
                           {para.leadLink.text}
                         </a>
                         {para.leadSep}
-                        <ContextTooltip
-                          title={para.tooltip.title}
-                          content={para.tooltip.paragraphs.map((t, j) => <span key={j} style={{ display: 'block' }}>{t}</span>)}
-                        >
-                          <span>{para.lead}</span>
-                        </ContextTooltip>
+                        {para.tooltip && (
+                          <ContextTooltip
+                            title={para.tooltip.title}
+                            content={para.tooltip.paragraphs.map((t, j) => <span key={j} style={{ display: 'block' }}>{t}</span>)}
+                          >
+                            <span>{para.lead}</span>
+                          </ContextTooltip>
+                        )}
                       </>
                     ) : para.tooltip ? (
                       <ContextTooltip
@@ -94,12 +101,27 @@ export default function CaseStudyIntroCard({
                     ) : (
                       <span className={s.bodyLead}>{para.lead}</span>
                     )}
-                    {' '}{para.text}
+                    {para.text && <>{' '}{para.text}</>}
                   </>
                 )}
               </p>
             ))}
           </div>
+
+          {/* Role / Scope container */}
+          {(role || scope) && (
+            <div className={s.roleScope}>
+              <p className={s.roleScopeText}>
+                {role && (
+                  <><span className={s.roleScopeLabel}>My role: </span>{role}<br /></>
+                )}
+                {scope && (
+                  <><span className={s.roleScopeLabel}>Scope: </span>{scope}</>
+                )}
+              </p>
+            </div>
+          )}
+
           {/* Mobile-only: tags shown after body copy */}
           <div className={s.mobileTagsEnd} aria-label="Case study tags">
             {tagElements}
@@ -148,6 +170,26 @@ export default function CaseStudyIntroCard({
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               </div>
+            )}
+          </Link>
+        ) : badgeImages ? (
+          /* Gamification layout: badges row above hero image */
+          <Link href={href} className={s.badgesImageCol} aria-label={`View full case study: ${title}`}>
+            <div className={s.badgesRow}>
+              {badgeImages.map((badge, i) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img key={i} src={badge.src} alt={badge.alt || ''} className={s.badgeImg} />
+              ))}
+            </div>
+            {image && (
+              <Image
+                src={image}
+                alt={imageAlt || title}
+                width={910}
+                height={766}
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+                priority={priority}
+              />
             )}
           </Link>
         ) : (

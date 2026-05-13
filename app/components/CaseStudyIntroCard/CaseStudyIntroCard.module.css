@@ -127,6 +127,61 @@
   letter-spacing: 0.05em;
 }
 
+/* ── Role / Scope container ───────────────────── */
+.roleScope {
+  background: rgba(161, 161, 161, 0.2);
+  border-radius: 4px;
+  padding: 20px;
+  margin-top: 24px;
+  max-width: 560px;
+}
+
+.roleScopeText {
+  font-family: var(--font-open-sans);
+  font-size: 16px;
+  color: var(--color-dark);
+  line-height: 32px;
+  margin: 0;
+}
+
+.roleScopeLabel {
+  font-family: var(--font-bungee);
+  color: var(--color-accent);
+  font-size: 16px;
+  line-height: 32px;
+}
+
+/* ── Badges + image column (Gamification) ─────── */
+.badgesImageCol {
+  flex: 0 0 560px;
+  min-width: 0;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+.badgesImageCol:hover {
+  opacity: 0.85;
+}
+
+.badgesRow {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.badgeImg {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ── Footer: "full case study →" ─────────────── */
 .footer {
   display: flex;
@@ -313,11 +368,16 @@
 
   /* Image above body copy — standardize top gap across all cards */
   .imageCol,
-  .cardImageCol {
+  .cardImageCol,
+  .badgesImageCol {
     flex: none;
     width: 100%;
     order: -1;
     margin-top: 20px !important;
+  }
+
+  .roleScope {
+    max-width: 100%;
   }
 
   .body {

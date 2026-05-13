@@ -56,7 +56,10 @@
       "Bash(kill 7434)",
       "Bash(sed -n '10,25p' /Users/mollymueller/Documents/portoflio/app/page.module.css)",
       "Bash(sed -n '8,25p' /Users/mollymueller/Documents/portoflio/app/case-studies/page.module.css)",
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "Bash(python3)",
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/mollymueller/Documents/portoflio/public/images/__TRACKED_VAR__)",
+      "Bash(git add *)"
     ]
   }
 }
