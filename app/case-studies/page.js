@@ -24,7 +24,7 @@ export default async function CaseStudiesPage({ searchParams }) {
 
       {/* Case study cards */}
       <div className={s.cards}>
-        {studies.map((study) => (
+        {studies.map((study, i) => (
           <CaseStudyIntroCard
             key={study.slug}
             slug={study.slug}
@@ -39,6 +39,7 @@ export default async function CaseStudiesPage({ searchParams }) {
             tagsRight={study.tagsRight}
             cardImages={study.cardImages ?? null}
             imageOffset={study.imageOffset ?? 0}
+            priority={i === 0}
           />
         ))}
       </div>

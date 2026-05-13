@@ -107,6 +107,8 @@
   opacity: 1;
   transition: opacity 0.15s ease;
   margin-top: 75px;
+  background-color: #e8e8e8;
+  border-radius: 4px;
 }
 
 .imageCol:hover {

@@ -23,6 +23,7 @@ export default function CaseStudyIntroCard({
   tagsRight = false,
   cardImages = null,
   imageOffset = 0,
+  priority = false,
 }) {
   const href = `/case-studies/${slug}`;
 
@@ -158,6 +159,7 @@ export default function CaseStudyIntroCard({
                 width={5270}
                 height={4096}
                 style={{ width: '100%', height: 'auto', aspectRatio: '5270 / 4096' }}
+                priority={priority}
               />
             ) : (
               <div className={s.imagePlaceholder} aria-hidden="true">
