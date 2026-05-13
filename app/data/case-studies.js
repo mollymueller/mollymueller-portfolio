@@ -31,7 +31,7 @@ export const caseStudies = [
       },
       'Over the past year, I dove into AI-empowered front-end engineering as our product and engineering AI infrastructure took off. So when it came to redesigning the app for Volt 2.0, I took the reigns and built out the full design system in code, implemented the entire UI/UX update, and developed AI-powered tooling the dev team used to ship faster and implement design more consistently. This case study goes into more detail on the Volt 2.0 rebrand.',
     ],
-    image: '/images/volt-hero.png',
+    image: '/images/volt-hero.webp',
     imageAlt: 'Volt 2.0 — a suite of screens from the redesigned mobile app',
     imageOffset: 45,
     introImage: null,
@@ -64,8 +64,8 @@ export const caseStudies = [
          'Over the next few years, I led Volt through two redesigns — introducing a structured design system in Figma, dark and light mode variables, and an expanded component library — alongside the user research program and the 2.0 rebrand highlighted in this case study. By March 2026, the app had grown to 18,000 monthly active users and expanded to include commissions pipeline, project management, chat, rep onboarding, an activity feed, and enhanced gamification.',
         ],
         images: [
-          { src: '/images/volt-mvp-mockup.png', alt: '[ MVP ]' },
-          { src: '/images/volt-1-mockup.png',   alt: '[ Volt 1.0 ]' },
+          { src: '/images/volt-mvp-mockup.webp', alt: '[ MVP ]' },
+          { src: '/images/volt-1-mockup.webp',   alt: '[ Volt 1.0 ]' },
           { src: '/images/volt-2-mockup.png',   alt: '[ Volt 2.0 ]' },
         ],
       },
@@ -82,7 +82,7 @@ export const caseStudies = [
           'The result was a new visual language for Volt: a token-based design system that works consistently in Figma and in code, plus an AI-powered agent and design skill that checks for anti-patterns and hard-coded values and offers style guide corrections for anyone shipping Volt code.',
         ],
         images: [
-          { src: '/images/volt-rebrand-banner-2.png', alt: '' },
+          { src: '/images/volt-rebrand-banner-2.webp', alt: '' },
         ],
       },
       {
@@ -106,8 +106,8 @@ export const caseStudies = [
           ],
         },
         images: [
-          { src: '/images/volt-design-system-1.png', alt: '' },
-          { src: '/images/volt-design-system-2.png', alt: '' },
+          { src: '/images/volt-design-system-1.webp', alt: '' },
+          { src: '/images/volt-design-system-2.webp', alt: '' },
         ],
         cta: { text: 'view the guide', href: 'https://volt-styleguide.figma.site/' },
       },
@@ -124,8 +124,8 @@ export const caseStudies = [
           'The typography system required particular care. React Native requires exact font file names rather than family names with weights — so we built a font families map that resolves each weight to the correct platform-specific file name for iOS and Android. The full type scale — display, headings, subtitles, overline, body, caption — was defined from Figma specs and wired into the theme.',
         ],
         images: [
-          { src: '/images/volt-code-1.png', alt: '' },
-          { src: '/images/volt-code-2.png', alt: '' },
+          { src: '/images/volt-code-1.webp', alt: '' },
+          { src: '/images/volt-code-2.webp', alt: '' },
         ],
       },
       {
@@ -282,7 +282,7 @@ export const caseStudies = [
       "Gamification in Volt was a longtime goal based on the fundamental  understanding of how solar sales reps are wired and motivated. Over the years I was asked to design goal and stats pages, competition features, and leaderboard views. The more fully realized version — a badge system with digital rewards, haptics, and sound — was the one we almost shipped before the company filed for bankruptcy. This case study is about that work: the philosophy behind it, the design exploration that preceded it, and the moment I used data to catch that we were about to get it wrong.",
       "The badge system wasn't a standalone feature — it connected to a native notification system, an admin tool for managing badge content, and a social wins feed. Those connected pieces were also the first real test of the Volt 2.0 design system and my new AI-powered workflow in practice. What I found was a faster, more direct path from design intent to shipped code.",
     ],
-    image: '/images/gamification-hero.png',
+    image: '/images/gamification-hero.webp',
     imageAlt: 'Gamification — achievements, badge earned modal, and wins feed screens',
     imageOffset: 20,
     introImage: null,
@@ -295,7 +295,7 @@ export const caseStudies = [
         heading: 'Years of Exploration',
         tags: [],
         images: [
-          { src: '/images/years-of-designs.png', alt: '' },
+          { src: '/images/years-of-designs.webp', alt: '' },
         ],
         left: [
           "Gamification wasn't a single project — it was a thread that ran through Volt's entire history. Over the years I designed goal and stats dashboards, competition UIs, leaderboard variations, and reward concepts that lived in my design graveyard before the final version took shape.",
@@ -311,8 +311,8 @@ export const caseStudies = [
         heading: 'The Philosophy',
         tags: [],
         images: [
-          { src: '/images/gamification-badge-unlock.png', alt: '' },
-          { src: '/images/gamification-achievements.png', alt: '' },
+          { src: '/images/gamification-badge-unlock.webp', alt: '' },
+          { src: '/images/gamification-achievements.webp', alt: '' },
         ],
         left: [
           "The thing I kept coming back to when thinking about gamification was this: the most effective rewards cost nothing. An animation. A sound. A haptic buzz. Programmed into the app — no budget, no prize fulfillment, no logistics. Duolingo built a $5 billion company on that premise. Slot machines have been exploiting it for decades. The machine makes enormous noise for the smallest monetary payout, and it makes you want to keep playing.",
@@ -328,7 +328,7 @@ export const caseStudies = [
         heading: 'Catching What the Data Revealed',
         tags: [],
         images: [
-          { src: '/images/gamification-data-analysis.png', alt: '' },
+          { src: '/images/gamification-data-analysis.webp', alt: '' },
           { src: '/images/gamification-badge-analysis.png', alt: '' },
         ],
         left: [
