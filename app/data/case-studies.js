@@ -19,7 +19,7 @@ export const caseStudies = [
         leadLink: { text: 'Volt', href: 'https://apps.apple.com/us/app/volt/id1644756647' },
         leadSep: ' by ',
         lead: 'Freedom Forever',
-        text: 'Volt by Freedom Forever is a lead management and canvassing app built for solar sales teams—door knocking tools, lead management, territory assignments, competitions, leaderboards, and more. I was the lead designer on Volt from day one: launched the MVP, led two redesigns, and rolled out numerous new features over three years. I initiated user surveys and focus groups to get real insight from the people using the app every day. Out of a 1 to 5 satisfaction scale, the majority of our users consistently gave Volt 5 stars.',
+        text: 'is a lead management and canvassing app built for solar sales teams—door knocking tools, lead management, territory assignments, competitions, leaderboards, and more. I was the lead designer on Volt from day one: launched the MVP, led two redesigns, and rolled out numerous new features over three years. I initiated user surveys and focus groups to get real insight from the people using the app every day. Out of a 1 to 5 satisfaction scale, the majority of our users consistently gave Volt 5 stars.',
         tooltip: {
           title: 'Background & Context',
           paragraphs: [
