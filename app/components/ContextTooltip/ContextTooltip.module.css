@@ -1,0 +1,160 @@
+/*
+  ContextTooltip
+  ──────────────
+  Wraps an inline trigger element. On hover, a black panel appears
+  BELOW the trigger with an upward-pointing caret at the top
+  pointing back to the hovered text.
+
+  Width: 640px
+  Padding: 32px, gap: 20px
+*/
+
+.wrapper {
+  display: inline-block;
+  line-height: inherit;
+  cursor: default;
+}
+
+.iconAnchor {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+  margin-bottom: 2px;
+}
+
+.icon {
+  display: block;
+  color: var(--color-accent);
+}
+
+/* ── Floating panel ───────────────────────────── */
+.panel {
+  display: block;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  pointer-events: none;
+}
+
+.box {
+  width: 640px;
+  background: #403f3f;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--color-white);
+}
+
+.title {
+  display: block;
+  font-family: var(--font-open-sans);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.body {
+  display: block;
+  font-family: var(--font-open-sans);
+  font-size: 16px;
+  line-height: 28px;
+}
+
+/* paragraph spans inside body */
+.body span + span {
+  display: block;
+  margin-top: 16px;
+}
+
+/* Upward-pointing caret — centered under the icon */
+.caret {
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #403f3f;
+  margin: 0 auto;
+}
+
+/* ── Mobile bottom sheet ──────────────────────── */
+.backdrop {
+  display: none;
+}
+
+.sheet {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .iconAnchor {
+    cursor: pointer;
+  }
+
+  /* Full-viewport backdrop */
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+
+  /* Bottom sheet panel */
+  .sheet {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    background: #403f3f;
+    color: var(--color-white);
+    border-radius: 16px 16px 0 0;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 24px 20px 40px;
+  }
+
+  .sheetHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .sheetTitle {
+    font-family: var(--font-open-sans);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .closeBtn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--color-white);
+    flex-shrink: 0;
+    line-height: 0;
+  }
+
+  .sheetBody {
+    font-family: var(--font-open-sans);
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .sheetBody span + span {
+    display: block;
+    margin-top: 14px;
+  }
+}

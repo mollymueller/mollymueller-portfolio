@@ -1,0 +1,331 @@
+/*
+  CaseStudyIntroCard layout
+  ─────────────────────────
+  Header row: title left + tags right (tagsRight mode) OR title only (tags below)
+  Content row: body text left | image right
+  Footer: "full case study →" right-aligned
+
+  Desktop font sizes from Figma:
+    title:    55px (Volt) / 60px (others) — set via inline style
+    subtitle: 18px Libre Baskerville Bold, line-height 28px
+    tags:     18px Libre Bodoni
+    body:     22px Open Sans, line-height 30px
+*/
+
+/* ── Header row ───────────────────────────────── */
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-bungee);
+  /* font-size set via inline style prop */
+  line-height: normal;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+/* Tags inline (right side of header, tagsRight mode) */
+.tagsInline {
+  display: flex;
+  gap: 32px;
+  font-family: var(--font-bodoni);
+  font-size: 18px;
+  line-height: normal;
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding-top: 14px;
+}
+
+/* Tags below title (default mode) */
+.tagsBelow {
+  display: flex;
+  gap: 32px;
+  font-family: var(--font-bodoni);
+  font-size: 18px;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
+.tag {
+  color: var(--color-hover);
+}
+
+.tag.active {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* ── Subtitle ─────────────────────────────────── */
+.subtitle {
+  font-family: var(--font-bodoni);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 26px;
+  color: var(--color-dark);
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+/* ── Body + image row ─────────────────────────── */
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.leftCol {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.body {
+  font-family: var(--font-open-sans);
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--color-dark);
+}
+
+.body p + p {
+  margin-top: 24px;
+}
+
+/* First words of a paragraph rendered in accent color */
+.bodyLead {
+  color: var(--color-accent);
+}
+
+/* ── Right column: image ──────────────────────── */
+.imageCol {
+  flex: 0 0 607px;
+  min-width: 0;
+  align-self: flex-start;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.15s ease;
+  margin-top: 75px;
+}
+
+.imageCol:hover {
+  opacity: 0.85;
+}
+
+/* placeholder when no image provided */
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 607 / 431;
+  background: linear-gradient(135deg, #d0d0d0 0%, #b0b0b0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-family: var(--font-bodoni);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+/* ── Footer: "full case study →" ─────────────── */
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+}
+
+.caseStudyLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-bodoni);
+  font-size: 20px;
+  color: var(--color-dark);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.caseStudyLink:hover {
+  color: var(--color-hover);
+}
+
+/* ── Card images: phone cluster + laptop (solar-university layout) ── */
+.cardImageCol {
+  flex: 0 0 607px; /* match .imageCol exactly — fixed width, no shrink */
+  min-width: 0;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+.cardImageCol:hover {
+  opacity: 0.85;
+}
+
+/* Phone cluster — fills the 607px column */
+.phoneCluster {
+  position: relative;
+  width: 100%;
+  max-width: 608px;
+  padding-top: 76.5%; /* height tracks width: ~428px at 560px */
+}
+
+/* Each phone is absolute */
+.phoneLeft,
+.phoneCenter,
+.phoneRight {
+  position: absolute;
+}
+
+/* Center phone (GIF with frame) needs explicit aspect-ratio for the 3-layer approach */
+.phoneCenter {
+  aspect-ratio: 239 / 481;
+}
+
+/* Left side phone — 33.6% wide, top 6.96%, left 0, behind center */
+.phoneLeft {
+  width: 33.6%;
+  aspect-ratio: 595 / 1200;
+  top: 6.96%;
+  left: 0;
+  z-index: 0;
+}
+
+/* Center phone (GIF) — 37.95% wide, top 0, left 29.96%, in front */
+.phoneCenter {
+  width: 37.95%;
+  top: 0;
+  left: 29.96%;
+  z-index: 1;
+}
+
+/* Right side phone — same size as left, shifted 8px left to tuck under GIF */
+.phoneRight {
+  width: 33.6%;
+  aspect-ratio: 595 / 1200;
+  top: 6.96%;
+  left: calc(66.43% - 8px);
+  z-index: 0;
+}
+
+/* Phone frame layers (same pattern as SectionCard introPhone) */
+.phoneBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.phoneGifWrap {
+  position: absolute;
+  top: calc(6% + 10px);
+  left: 5.4%;
+  width: 88.3%;
+  height: 91.5%;
+  overflow: hidden;
+}
+
+.phoneGifEl {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+}
+
+.phoneStaticEl {
+  object-fit: cover !important;
+  object-position: top center;
+}
+
+.phoneFrameOverlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Already-framed side phones — fill fixed aspect-ratio container */
+.phoneFlatImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Laptop below cluster — slightly wider than phone cluster, capped to column width */
+.laptopWrap {
+  width: 100%;
+  max-width: 460px;
+}
+
+/* Mobile-only tags block (after body copy) — hidden on desktop */
+.mobileTagsEnd {
+  display: none;
+}
+
+/* ── Mobile ──────────────────────────────────── */
+@media (max-width: 767px) {
+  .cardTop {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .title {
+    font-size: 36px !important; /* override inline style on mobile */
+  }
+
+  /* Hide tags in their default positions */
+  .tagsInline,
+  .tagsBelow {
+    display: none;
+  }
+
+  /* Show tags after body copy */
+  .mobileTagsEnd {
+    display: flex;
+    gap: 16px;
+    font-family: var(--font-bodoni);
+    font-size: 16px;
+    margin-top: 16px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+    line-height: 26px;
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Image above body copy — standardize top gap across all cards */
+  .imageCol,
+  .cardImageCol {
+    flex: none;
+    width: 100%;
+    order: -1;
+    margin-top: 20px !important;
+  }
+
+  .body {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .caseStudyLink {
+    font-size: 18px;
+  }
+}

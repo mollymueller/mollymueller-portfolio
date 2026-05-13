@@ -1,0 +1,140 @@
+/* ── Page shell ───────────────────────────────── */
+.page {
+  min-height: 100vh;
+  padding: 48px 40px 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── MOLLY MUELLER header ─────────────────────── */
+.headerOuter {
+  overflow: visible;
+}
+
+.headerInner {
+  width: 1233px;
+  height: 158px;
+  /* transform and transformOrigin set by JS (useLayoutEffect) */
+}
+
+/* ── Centered content below header ────────────── */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding-top: 20px;
+}
+
+.isAn {
+  font-family: var(--font-bodoni);
+  font-size: 30px;
+  color: var(--color-white);
+  line-height: normal;
+  margin-bottom: 24px;
+}
+
+/* ── Taglines scaling wrapper ─────────────────── */
+.tagsWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* transform and marginBottom set by JS on small viewports */
+}
+
+/* ── Tagline containers ───────────────────────── */
+/* Each is a relative block so absolute children anchor to it.
+   margin auto on the inline-block centers it horizontally. */
+.tagLine {
+  position: relative;
+  display: block;
+  overflow: visible;
+}
+
+.abs {
+  position: absolute;
+}
+
+.shade {
+  font-family: var(--font-bungee-shade);
+  color: var(--color-accent);
+}
+
+.fill {
+  font-family: var(--font-bungee);
+  color: var(--color-white);
+  transition: color 0.15s ease;
+}
+
+.hoverGroup:hover .fill {
+  color: var(--color-hover);
+}
+
+/* ── Body tagline ─────────────────────────────── */
+.tagLine + .tagline {
+  margin-top: 24px;
+}
+
+/* .tagLine + .tagline targets "building things..." that follows PRODUCT DESIGNER */
+
+.tagline {
+  font-family: var(--font-bodoni);
+  font-size: 28px;
+  color: var(--color-white);
+  text-align: center;
+  line-height: normal;
+  white-space: nowrap;
+  margin-bottom: 44px;
+}
+
+/* ── CTA ──────────────────────────────────────── */
+.ctaWrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.ctaLink {
+  font-family: var(--font-bodoni);
+  font-size: 24px;
+  color: var(--color-white);
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.ctaWrapper:hover .ctaLink {
+  color: var(--color-hover);
+}
+
+/* ── Mobile ──────────────────────────────────── */
+@media (max-width: 767px) {
+  .page {
+    padding: 24px 16px 48px;
+  }
+
+  .headerInner {
+    width: 393px;
+    height: 53px;
+  }
+
+  .content {
+    padding-top: 28px;
+    gap: 12px;
+  }
+
+  .isAn {
+    font-size: 28px;
+  }
+
+  .tagline {
+    font-size: 28px;
+  }
+
+  .ctaLink {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,118 @@
+/*
+  PhotoCollage
+  ────────────
+  4-panel overlapping layout used in the AI Tooling section.
+  Panels fan out at different vertical offsets, each with a
+  gradient fade-to-dark on the bottom.
+  Uses % offsets so the whole thing scales with its container.
+*/
+
+.collage {
+  position: relative;
+  width: 100%;
+  /* Height is driven by the tallest panel + its vertical offset */
+  height: 0;
+  padding-bottom: 42%; /* aspect ratio approximation — adjust to taste */
+  overflow: visible;
+}
+
+.panel {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Gradient overlay fading each panel to background color at the bottom */
+.panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 30%,
+    #403f3f 100%
+  );
+  pointer-events: none;
+}
+
+.panelImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.panelPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #555 0%, #333 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-family: var(--font-bodoni);
+  font-size: 13px;
+}
+
+/*
+  Panel positions — four panels fanning from left to right,
+  each slightly lower than the last to create a cascading depth effect.
+  Width: ~32% each, overlapping by ~10%.
+*/
+.panel1 {
+  left: 0%;
+  top: 0%;
+  width: 32%;
+  height: 75%;
+}
+
+.panel2 {
+  left: 11%;
+  top: 16%;
+  width: 36%;
+  height: 82%;
+}
+
+.panel3 {
+  left: 39%;
+  top: 0%;
+  width: 36%;
+  height: 75%;
+}
+
+.panel4 {
+  left: 50%;
+  top: 17%;
+  width: 36%;
+  height: 82%;
+}
+
+/* ── Mobile: stack vertically ─────────────────── */
+@media (max-width: 767px) {
+  .collage {
+    /* Switch to normal flow on mobile */
+    position: static;
+    height: auto;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .panel,
+  .panel1,
+  .panel2,
+  .panel3,
+  .panel4 {
+    position: static;
+    width: 100%;
+    height: 220px;
+    top: auto;
+    left: auto;
+  }
+
+  .panel::after {
+    display: none; /* no gradient fade needed when stacked */
+  }
+}

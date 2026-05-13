@@ -1,0 +1,329 @@
+/*
+  SectionCard layout
+  ──────────────────
+  Desktop (≥1100px): heading + optional tags + two-column body
+  Tablet (768-1099px): heading + single-column body
+  Mobile (<768px): heading + interleaved images + single-column body
+*/
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Highlighted lead text in paragraphs */
+.bodyLead {
+  color: var(--color-accent);
+}
+
+/* ── Heading ─────────────────────────────────── */
+.heading {
+  font-family: var(--font-bungee);
+  font-size: 55px;
+  line-height: normal;
+  color: var(--color-dark);
+}
+
+/* ── Tags row (optional) ─────────────────────── */
+.tags {
+  display: flex;
+  gap: 32px;
+  font-family: var(--font-bodoni);
+  font-size: 18px;
+  color: var(--color-accent); /* section-level tags are always accented */
+  margin-top: -20px; /* tighten gap after heading */
+}
+
+/* ── Two-column body ─────────────────────────── */
+.columns {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.col {
+  flex: 1 1 0;
+  min-width: 0;
+  font-family: var(--font-open-sans);
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--color-dark);
+}
+
+.col p + p {
+  margin-top: 20px;
+}
+
+.col ul {
+  margin-top: 12px;
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.col li {
+  line-height: 30px;
+}
+
+/* ── Mobile image slot (hidden on desktop) ───── */
+.mobileImage {
+  display: none;
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.mobileImgEl {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.mobileImgPlaceholder {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #d0d0d0 0%, #b0b0b0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-family: var(--font-bodoni);
+  font-size: 14px;
+}
+
+/* ── Images section ──────────────────────────── */
+.imagesSection {
+  margin-top: 8px;
+}
+
+/* Grid: 1, 2, or 3 images in equal columns */
+.imagesRow {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.imageItem {
+  flex: 1;
+  min-width: 0;
+}
+
+
+.imgPlaceholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #d0d0d0 0%, #b0b0b0 100%);
+  border-radius: 2px;
+}
+
+.imgCaption {
+  margin-top: 12px;
+  font-family: var(--font-open-sans);
+  font-size: 14px;
+  line-height: 1.4;
+  color: #888;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+/* ── Left-column image: stretch columns + vertically center the image ── */
+.columnsStretch {
+  align-items: stretch;
+}
+
+.colImageLeft {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Right-column portrait image ────────────── */
+.imageRightWrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 4px;
+}
+
+/* ── Left-column single image (leftCollage with 1 image) ── */
+.leftImageWrap {
+  margin-top: 28px;
+}
+
+/* ── Left-column collage (leftCollage prop) ── */
+.leftCollageWrap {
+  position: relative;
+  max-width: 561px;
+  padding-top: 8.73%; /* 49/561 — room for mobile sticking above base */
+  margin-top: 28px;
+}
+
+/* ── Overlapping collage (imagesBelow + collageBelow) ── */
+/* Figma: base 561×361 at left:0/top:49, mobile 432×339 at left:88/top:0 */
+.imagesOverlapWrap {
+  position: relative;
+  max-width: 561px;
+  padding-top: 8.73%; /* 49/561 — room for mobile sticking above base */
+}
+
+.overlapBase {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.overlapFront {
+  position: absolute;
+  top: 0;
+  left: 15.7%;   /* 88/561 */
+  width: 77%;    /* 432/561 */
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.28);
+  z-index: 1;
+}
+
+/* ── Intro images row: laptop | phone | laptop ── */
+.introImageRow {
+  display: grid;
+  grid-template-columns: 350fr 137fr 350fr;
+  gap: 41px;
+  align-items: center;
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.introLaptopWrap {
+  position: relative;
+  aspect-ratio: 350 / 211;
+  width: 100%;
+}
+
+.introPhoneWrap {
+  position: relative;
+  aspect-ratio: 239 / 481;
+  width: 100%;
+}
+
+.introImageEl {
+  object-fit: contain !important;
+}
+
+/* Layer 1: phone body bg (iphone-background.png covers entire container) */
+.introPhoneBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Layer 2: screen area — inset below notch / inside bezels (239×481 reference) */
+.introGifWrap {
+  position: absolute;
+  top: calc(6% + 10px);
+  left: 5.4%;
+  width: 88.3%;
+  height: 91.5%;
+  overflow: hidden;
+}
+
+.introGifEl {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+}
+
+.introPhoneFrameOverlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── CTA link (e.g. "view the guide ▶") ─────── */
+.ctaRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-bodoni);
+  font-size: 20px;
+  color: var(--color-dark);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.ctaLink:hover {
+  color: var(--color-hover);
+}
+
+.ctaArrow {
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 20px solid var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* ── Tablet: single column ───────────────────── */
+@media (max-width: 1099px) {
+  .columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .col {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* ── Mobile ──────────────────────────────────── */
+@media (max-width: 767px) {
+  .heading {
+    font-size: 36px;
+  }
+
+  .col {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .mobileImage {
+    display: block;
+  }
+
+  .imagesRow {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Stack laptop | phone | laptop intro images vertically */
+  .introImageRow {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .introPhoneWrap {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}

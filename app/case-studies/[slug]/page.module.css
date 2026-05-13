@@ -1,0 +1,146 @@
+/* ── Page shell ───────────────────────────────── */
+.page {
+  min-height: 100vh;
+  padding: 48px 40px 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ── Page header ─────────────────────────────── */
+.pageHeader {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ◄ back link — below heading, left-aligned */
+.backLink {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-bodoni);
+  font-size: 24px;
+  color: var(--color-white);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin: 20px 0 0;
+  transition: color 0.15s ease;
+}
+
+.backLink:hover {
+  color: var(--color-hover);
+}
+
+.arrowLeft {
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-right: 22px solid var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* Title fills full header width; JS handles centering via translateX */
+.titleCenter {
+  display: block;
+  width: 100%;
+  /* explicit height prevents Safari from collapsing this when all BungeeHeading
+     children are position:absolute — JS will override this with the real value */
+  min-height: 1px;
+}
+
+/* BungeeHeading outer — full width so JS can measure container */
+.titleOuter {
+  overflow: visible;
+  width: 100%;
+}
+
+.titleInner {
+  /* width/height set via inline style from props */
+}
+
+/* Fallback h1 for studies without BungeeHeading data */
+.titleFallback {
+  font-size: 80px;
+  line-height: normal;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  display: block;
+}
+
+.titleFallbackShade {
+  font-family: var(--font-bungee-shade);
+  color: var(--color-accent);
+  display: block;
+  white-space: nowrap;
+}
+
+.titleFallbackFill {
+  font-family: var(--font-bungee);
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* Intro card row — matches sections width, has top gap */
+.introRow {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+/* ── Sections list ───────────────────────────── */
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 40px auto 0;
+}
+
+.backArrow {
+  flex-shrink: 0;
+}
+
+/* ── Mobile ──────────────────────────────────── */
+@media (max-width: 767px) {
+  .page {
+    padding: 24px 16px 60px;
+  }
+
+  .backLink {
+    font-size: 18px;
+    margin-top: 12px;
+  }
+
+  /* Smaller arrow on mobile */
+  .backArrow {
+    width: 14px;
+    height: 18px;
+  }
+
+  .titleCenter {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .titleFallback {
+    font-size: 48px;
+  }
+
+  /* Tighter gap between title and intro card */
+  .introRow {
+    padding-top: 16px;
+  }
+
+  .sections {
+    gap: 48px;
+  }
+}

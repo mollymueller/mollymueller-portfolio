@@ -1,0 +1,120 @@
+/* ── Page shell ───────────────────────────────── */
+.page {
+  min-height: 100vh;
+  padding: 48px 40px 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ── MOLLY MUELLER header ─────────────────────── */
+.headerOuter {
+  overflow: visible;
+}
+
+.headerInner {
+  width: 1233px;
+  height: 158px;
+  /* transform and transformOrigin set by JS (useLayoutEffect) */
+}
+
+/* ── Nav + subtitle row ───────────────────────── */
+.navRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  max-width: 1280px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subtitle {
+  font-family: var(--font-bodoni);
+  font-size: 24px;
+  color: var(--color-white);
+  line-height: normal;
+  text-align: center;
+  flex: 1;
+}
+
+.subtitleUnderline {
+  display: inline;
+  border-bottom: 4px solid var(--color-accent);
+  padding-bottom: 4px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-bodoni);
+  font-size: 24px;
+  color: var(--color-white);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.navLink:hover {
+  color: var(--color-hover);
+}
+
+.arrowLeft {
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-right: 22px solid var(--color-accent);
+  flex-shrink: 0;
+}
+
+.arrowRight {
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 22px solid var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* ── Cards list ───────────────────────────────── */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── Mobile ──────────────────────────────────── */
+@media (max-width: 767px) {
+  .page {
+    padding: 24px 16px 60px;
+  }
+
+  .headerInner {
+    width: 393px;
+    height: 53px;
+  }
+
+  .navRow {
+    margin-top: 20px;
+    margin-bottom: 32px;
+  }
+
+  .subtitle {
+    font-size: 32px;
+  }
+
+  .navLink {
+    font-size: 18px;
+  }
+
+  .cards {
+    gap: 48px;
+  }
+}
