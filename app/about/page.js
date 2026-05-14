@@ -21,11 +21,12 @@ export default function AboutPage() {
             <div className={s.leftCol}>
               <div className={s.photoWrap}>
                 <Image
-                  src="/images/molly-about-2.jpg"
+                  src="/images/molly-about.webp"
                   alt="Molly Mueller"
                   width={260}
                   height={260}
                   className={s.photo}
+                  priority
                 />
               </div>
               <h1 className={s.name}>molly mueller</h1>

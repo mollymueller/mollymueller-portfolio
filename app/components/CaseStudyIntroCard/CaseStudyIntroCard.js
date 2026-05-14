@@ -188,6 +188,7 @@ export default function CaseStudyIntroCard({
                 alt={imageAlt || title}
                 width={910}
                 height={766}
+                sizes="(max-width: 767px) 100vw, 560px"
                 style={{ width: '100%', height: 'auto', display: 'block' }}
                 priority={priority}
                 fetchPriority={priority ? 'high' : undefined}
@@ -202,6 +203,7 @@ export default function CaseStudyIntroCard({
                 alt={imageAlt || title}
                 width={5270}
                 height={4096}
+                sizes="(max-width: 767px) 100vw, 607px"
                 style={{ width: '100%', height: 'auto', aspectRatio: '5270 / 4096' }}
                 priority={priority}
                 fetchPriority={priority ? 'high' : undefined}
