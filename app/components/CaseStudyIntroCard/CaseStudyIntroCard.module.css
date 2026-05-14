@@ -336,7 +336,7 @@
   }
 
   .title {
-    font-size: 36px !important; /* override inline style on mobile */
+    font-size: 40px !important; /* override inline style on mobile */
   }
 
   /* Hide tags in their default positions */

@@ -21,37 +21,40 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
-  margin-bottom: 30px;
+  gap: 0px;
+  margin-top: -16px;
+  margin-bottom: 16px;
 }
 
 /* ── Subtitle pill ──────────────────────────────── */
 .subtitlePill {
-  background: rgba(161, 161, 161, 0.2);
+  background: rgba(161, 161, 161, 0.0);
   border-radius: 4px;
   padding: 20px 24px;
-  max-width: 728px;
+  max-width: 1000px;
   width: 100%;
 }
 
 .subtitleText {
-  font-family: var(--font-bungee);
-  font-size: 22px;
-  line-height: 44px;
-  letter-spacing: 1.1px;
+  font-family: var(--font-bodoni);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0px;
   color: var(--color-dark);
   text-align: center;
+  white-space: normal;
   margin: 0;
 }
 
 /* ── Role / Scope meta ──────────────────────────── */
 .meta {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 38px;
   text-align: center;
   color: var(--color-dark);
   margin: 0;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .metaLabel {
@@ -111,7 +114,7 @@
 @media (max-width: 1099px) {
   .subtitleText {
     font-size: 18px;
-    line-height: 36px;
+    line-height: 32px;
   }
 
   .meta {

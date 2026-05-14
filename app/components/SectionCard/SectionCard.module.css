@@ -301,7 +301,7 @@
 /* ── Mobile ──────────────────────────────────── */
 @media (max-width: 767px) {
   .heading {
-    font-size: 36px;
+    font-size: 40px;
   }
 
   .col {

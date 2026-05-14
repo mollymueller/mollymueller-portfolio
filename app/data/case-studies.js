@@ -33,7 +33,7 @@ export const caseStudies = [
     ],
     image: '/images/volt-hero.webp',
     imageAlt: 'Volt 2.0 — a suite of screens from the redesigned mobile app',
-    imageOffset: 45,
+    imageOffset: 32,
     introImage: null,
     subtitle: 'A mobile app rebrand, a design system, and what can happen when a designer gets into the code',
     role: 'Lead designer and front-end design engineer',
