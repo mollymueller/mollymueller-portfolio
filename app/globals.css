@@ -27,8 +27,13 @@ html, body {
 }
 
 html {
-  scrollbar-gutter: stable;
+  scrollbar-gutter: stable; /* Chrome/Firefox: reserves gutter without showing scrollbar */
+  overflow-y: scroll;       /* Safari desktop: always reserves scrollbar space */
   overflow-x: clip;
+}
+
+body {
+  overflow-x: hidden; /* Mobile: clamps any horizontal overflow so layout never shifts between pages */
 }
 
 a {

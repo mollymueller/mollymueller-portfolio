@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getCaseStudy, getFilteredCaseStudies } from '@/app/data/case-studies';
 import CaseStudyTitle from './CaseStudyTitle';
 import CaseStudyPageIntro from './CaseStudyPageIntro';
+import BackButton from './BackButton';
 import { SectionCard } from '@/app/components';
 import s from './page.module.css';
 
@@ -13,6 +13,7 @@ import s from './page.module.css';
 const HEADING_DATA = {
   volt: {
     fontSize: 90,
+    mobileWidth: 720,
     shadeWords: [
       { text: 'volt', left: 0,      top: 10.5 },
       { text: '2.0',  left: 315.75, top: 5.25 },
@@ -31,6 +32,7 @@ const HEADING_DATA = {
   },
   gamification: {
     fontSize: 90,
+    // single long word — scales down on mobile, no split possible
     shadeWords: [
       { text: 'gamification', left: 0, top: 9 },
     ],
@@ -75,6 +77,43 @@ const HEADING_DATA = {
     ],
     width: 1101,
     height: 113,
+    // Mobile: split into two lines, each word JS-scaled independently.
+    // "solar" keeps original coordinates (shade starts at 0, same as full phrase).
+    // "university" letters rebased by subtracting 407 (estimated left edge of 'u').
+    mobileSplit: [
+      {
+        shadeWords: [{ text: 'solar', left: 0, top: 9 }],
+        letters: [
+          { char: 's', left: 46,     top: 3 },
+          { char: 'o', left: 117,    top: 3 },
+          { char: 'l', left: 191.5,  top: 3 },
+          { char: 'a', left: 265.75, top: 3 },
+          { char: 'r', left: 340,    top: 3 },
+        ],
+        width: 390,
+        height: 113,
+        fontSize: 90,
+        scaleWidth: 720,
+      },
+      {
+        shadeWords: [{ text: 'university', left: 0, top: 9 }],
+        letters: [
+          { char: 'u', left: 48.5,  top: 3 },
+          { char: 'n', left: 125.5, top: 3 },
+          { char: 'i', left: 194,   top: 3 },
+          { char: 'v', left: 263.5, top: 3 },
+          { char: 'e', left: 335.5, top: 3 },
+          { char: 'r', left: 407,   top: 3 },
+          { char: 's', left: 478.5, top: 3 },
+          { char: 'i', left: 543.5, top: 3 },
+          { char: 't', left: 609,   top: 3 },
+          { char: 'y', left: 679,   top: 3 },
+        ],
+        width: 720,
+        height: 113,
+        fontSize: 90,
+      },
+    ],
   },
 };
 
@@ -107,13 +146,8 @@ export default async function CaseStudyPage({ params }) {
       <div className={s.pageHeader}>
 
 
-        {/* ◄ back — below heading, left-aligned */}
-        <Link href="/case-studies" className={s.backLink}>
-          <svg aria-hidden="true" width="22" height="28" viewBox="0 0 22 28" fill="none" className={s.backArrow}>
-            <path d="M20 2L2 14L20 26Z" fill="var(--color-accent)" stroke="var(--color-accent)" strokeWidth="4" strokeLinejoin="round" strokeLinecap="round"/>
-          </svg>
-          back
-        </Link>
+        {/* ◄ back — uses router.back() so scroll position is restored */}
+        <BackButton />
 
         {/* Title — full width, centered */}
         <div className={s.titleCenter}>
@@ -125,6 +159,8 @@ export default async function CaseStudyPage({ params }) {
               width={headingData.width}
               height={headingData.height}
               fontSize={headingData.fontSize}
+              mobileWidth={headingData.mobileWidth}
+              mobileSplit={headingData.mobileSplit}
             />
           ) : (
             <h1 className={s.titleFallback} aria-label={study.title}>

@@ -8,11 +8,13 @@
   font-family: var(--font-bungee-shade);
   color: var(--color-accent);
   position: absolute;
+  z-index: 0;
 }
 
 .fill {
   font-family: var(--font-bungee);
   color: var(--color-white);
   position: absolute;
+  z-index: 1;
   transform: translateX(-50%);
 }
