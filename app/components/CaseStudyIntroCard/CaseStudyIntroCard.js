@@ -143,18 +143,18 @@ export default function CaseStudyIntroCard({
                   {phone.isGif ? (
                     <>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/images/iphone-background.png" alt="" className={s.phoneBg} />
+                      <img src="/images/iphone-background.png" alt="" className={s.phoneBg} fetchpriority={priority ? 'high' : undefined} />
                       <div className={s.phoneGifWrap}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={phone.src} alt={phone.alt || ''} className={s.phoneGifEl} />
+                        <img src={phone.src} alt={phone.alt || ''} className={s.phoneGifEl} fetchpriority={priority ? 'high' : undefined} />
                       </div>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/images/iphone-frame-cutout.png" alt="" className={s.phoneFrameOverlay} />
+                      <img src="/images/iphone-frame-cutout.png" alt="" className={s.phoneFrameOverlay} fetchpriority={priority ? 'high' : undefined} />
                     </>
                   ) : (
                     /* Already-framed PNG — render as-is */
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={phone.src} alt={phone.alt || ''} className={s.phoneFlatImg} />
+                    <img src={phone.src} alt={phone.alt || ''} className={s.phoneFlatImg} fetchpriority={priority ? 'high' : undefined} />
                   )}
                 </div>
               ))}
@@ -168,6 +168,7 @@ export default function CaseStudyIntroCard({
                   width={374}
                   height={225}
                   style={{ width: '100%', height: 'auto', display: 'block' }}
+                  priority={priority}
                 />
               </div>
             )}
@@ -189,6 +190,7 @@ export default function CaseStudyIntroCard({
                 height={766}
                 style={{ width: '100%', height: 'auto', display: 'block' }}
                 priority={priority}
+                fetchPriority={priority ? 'high' : undefined}
               />
             )}
           </Link>
@@ -202,6 +204,7 @@ export default function CaseStudyIntroCard({
                 height={4096}
                 style={{ width: '100%', height: 'auto', aspectRatio: '5270 / 4096' }}
                 priority={priority}
+                fetchPriority={priority ? 'high' : undefined}
               />
             ) : (
               <div className={s.imagePlaceholder} aria-hidden="true">

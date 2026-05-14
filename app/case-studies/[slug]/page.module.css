@@ -1,14 +1,14 @@
 /* ── Page shell ───────────────────────────────── */
 .page {
   min-height: 100vh;
-  padding: 32px 40px 80px;
-  max-width: 1440px;
+  padding: 32px 40px 80px; /* tighter top than other pages — intentional */
+  max-width: var(--page-max-width);
   margin: 0 auto;
 }
 
 /* ── Page header ─────────────────────────────── */
 .pageHeader {
-  max-width: 1280px;
+  max-width: var(--content-max-width);
   margin: 10 auto;
 }
 
@@ -107,7 +107,7 @@
 
 /* Intro card row — matches sections width, has top gap */
 .introRow {
-  max-width: 1280px;
+  max-width: var(--content-max-width);
   width: 100%;
   margin: 0 auto;
   padding-top: 30px;
@@ -118,7 +118,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  max-width: 1280px;
+  max-width: var(--content-max-width);
   width: 100%;
   margin: 40px auto 0;
 }
@@ -130,7 +130,8 @@
 /* ── Mobile ──────────────────────────────────── */
 @media (max-width: 767px) {
   .page {
-    padding: 24px 16px 60px;
+    padding: var(--page-padding-mobile);
+    padding-bottom: 60px;
   }
 
   .backLink {

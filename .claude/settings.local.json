@@ -59,7 +59,9 @@
       "Bash(npx next *)",
       "Bash(python3)",
       "Bash(sips -g pixelWidth -g pixelHeight /Users/mollymueller/Documents/portoflio/public/images/__TRACKED_VAR__)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(kill 41310)",
+      "Bash(git diff *)"
     ]
   }
 }
