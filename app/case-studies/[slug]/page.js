@@ -106,6 +106,15 @@ export default async function CaseStudyPage({ params }) {
       {/* ── Page header: title, then back below ─────── */}
       <div className={s.pageHeader}>
 
+
+        {/* ◄ back — below heading, left-aligned */}
+        <Link href="/case-studies" className={s.backLink}>
+          <svg aria-hidden="true" width="22" height="28" viewBox="0 0 22 28" fill="none" className={s.backArrow}>
+            <path d="M20 2L2 14L20 26Z" fill="var(--color-accent)" stroke="var(--color-accent)" strokeWidth="4" strokeLinejoin="round" strokeLinecap="round"/>
+          </svg>
+          back
+        </Link>
+
         {/* Title — full width, centered */}
         <div className={s.titleCenter}>
           {headingData ? (
@@ -125,13 +134,6 @@ export default async function CaseStudyPage({ params }) {
           )}
         </div>
 
-        {/* ◄ back — below heading, left-aligned */}
-        <Link href="/case-studies" className={s.backLink}>
-          <svg aria-hidden="true" width="22" height="28" viewBox="0 0 22 28" fill="none" className={s.backArrow}>
-            <path d="M20 2L2 14L20 26Z" fill="var(--color-accent)" stroke="var(--color-accent)" strokeWidth="4" strokeLinejoin="round" strokeLinecap="round"/>
-          </svg>
-          back
-        </Link>
 
       </div>
 

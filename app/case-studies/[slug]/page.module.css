@@ -1,7 +1,7 @@
 /* ── Page shell ───────────────────────────────── */
 .page {
   min-height: 100vh;
-  padding: 48px 40px 80px;
+  padding: 32px 40px 80px;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -9,7 +9,7 @@
 /* ── Page header ─────────────────────────────── */
 .pageHeader {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 10 auto;
 }
 
 /* ◄ back link — below heading, left-aligned */
@@ -48,6 +48,7 @@
   /* explicit height prevents Safari from collapsing this when all BungeeHeading
      children are position:absolute — JS will override this with the real value */
   min-height: 1px;
+  margin-top: -20px
 }
 
 /* BungeeHeading outer — full width so JS can measure container */
@@ -99,7 +100,7 @@
 .sections {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 40px;
   max-width: 1280px;
   width: 100%;
   margin: 40px auto 0;
