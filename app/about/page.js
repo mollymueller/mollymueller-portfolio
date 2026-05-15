@@ -43,10 +43,10 @@ export default function AboutPage() {
                 For the past few years I was a Senior Product Designer at Freedom Forever, one of the largest residential solar installers in the U.S. I led design for Volt, the company's proprietary mobile sales app, from MVP through two full redesigns.
               </p>
               <p className={s.bio}>
-                Over the last year, I crossed into front-end AI engineering — building out a design system in code, shipping the full redesign, and developing AI-powered tooling the team used to ship faster and implement design more consistently. At a moment when the line between designer, PM, and developer is blurring fast, I jumped in and seized the moment.
+                Over the last year, I crossed into front-end AI engineering — building out a design system in code, shipping the full redesign, and developing AI-powered tooling the team used to ship faster and implement design more consistently.
               </p>
               <p className={s.bio}>
-                When I'm not designing or building products I can often be found walking around San Francisco, going to movies or shows with my husband or at home: painting, reading, or watching tv with our two cats.
+              Lately when I'm not designing or building products, you might find painting portraits of my cats or urban hiking in San Francisco with my husband. 
               </p>
               <p className={s.bio}>
                 <b>I'm based in San Francisco and currently open to freelance or full time opportunities.</b>

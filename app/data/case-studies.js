@@ -30,7 +30,7 @@ export const caseStudies = [
         },
         text: 'proprietary mobile sales app—from MVP through two full redesigns, and countless enhancements and feature releases. Most recently I crossed into front-end AI engineering and built out a design system in code, shipped the full redesign, and developed AI-powered tooling that the team used to ship faster and implement design more consistently.',
       },
-      'This case study goes into more detail on the Volt 2.0 rebrand.',
+      'My case studies here are all connected: this one goes into detail on the Volt 2.0 rebrand, while the other two were the first features to test the rebrand and related AI tools in practice.',
     ],
     image: '/images/volt-hero.webp',
     imageAlt: 'Volt 2.0 — a suite of screens from the redesigned mobile app',
@@ -83,6 +83,9 @@ export const caseStudies = [
           'The result was a new visual language for Volt: a token-based design system that works consistently in Figma and in code, plus an AI-powered agent and design skill that checks for anti-patterns and hard-coded values and offers style guide corrections for anyone shipping Volt code.',
         ],
         images: [
+          { src: '/images/volt-rebrand-banner-light.webp', alt: '' },
+        ],
+        imagesBelow: [
           { src: '/images/volt-rebrand-banner-2.webp', alt: '' },
         ],
       },
@@ -107,9 +110,10 @@ export const caseStudies = [
           ],
         },
         images: [
-          { src: '/images/volt-design-system-1.webp', alt: '' },
+          { src: '/images/volt-design-guide-1.webp', alt: '' },
           { src: '/images/volt-design-system-2.webp', alt: '' },
         ],
+        imageGapBelow: 24,
         cta: { text: 'view the guide', href: 'https://volt-styleguide.figma.site/' },
       },
       {
@@ -128,6 +132,7 @@ export const caseStudies = [
           { src: '/images/volt-code-1.webp', alt: '' },
           { src: '/images/volt-code-2.webp', alt: '' },
         ],
+        imageGapBelow: 24,
       },
       {
         id: 'ai-tooling',
@@ -148,18 +153,6 @@ export const caseStudies = [
           { src: '/images/volt-ai-tooling-2.png', alt: '' },
         ],
       },
-      {
-        id: 'takeaways',
-        heading: 'Takeaways',
-        tags: [],
-        left: [
-          'As soon as AI tools were connected to our codebase and non-developers were encouraged to set up dev environments, I dove in. After years of waiting on developers to implement my designs and rarely seeing them land with the level of detail and polish I intended, I finally had a direct line from design thinking to working code.',
-        ],
-        right: [
-          'AI gave me a real understanding of how the code worked and how the styles were being applied so and how to improve things directly. The design system and AI tooling became infrastructure that made things faster, more consistent, and easier to communicate across a team.',
-        ],
-        images: [],
-      },
     ],
   },
 
@@ -171,7 +164,7 @@ export const caseStudies = [
     tagsRight: true,
     excerpt: [
       {
-        prefix: "Solar University is an in-house Learning Management System (LMS) that was kicked off by our PM and senior developer while I was still heads-down finishing the Volt 2.0 redesign. Building an in-house LMS would have been time prohibitive just a handful of months prior, but with AI we could do it ourselves in a fraction of the time. This also meant the PM and developer could move fast with AI handling the early design scaffolding. In order to get my designs and direction in without stalling the rebrand, I conducted a compressed design process: a full UX audit with AI-assisted note-taking, an AI-research and brainstorm session that both validated my instincts and surfaced new ideas, and an ",
+        prefix: "Solar University is an in-house Learning Management System (LMS) that was kicked off by our PM and senior developer while I was still heads-down finishing the Volt 2.0 redesign. Building an in-house LMS would have been time prohibitive just a handful of months prior, but with AI we could do it ourselves in a fraction of the time. This also meant the PM and developer could utilize AI to handle the early design scaffolding. In order to get my design direction in without stalling the rebrand, I conducted a compressed design process: a full UX audit with AI-assisted note-taking, an AI-research and brainstorm session that both validated my instincts and surfaced new ideas, and an ",
         link: { text: "interactive prototype", href: "https://solar-university.figma.site/" },
         suffix: " delivered in under a day.",
       },
@@ -215,7 +208,7 @@ export const caseStudies = [
           "Ideas surfaced mid-audit: what if instead of a standard quiz, certain lessons asked reps to record themselves explaining a concept in their own words? For technical content like net metering, true-ups, utility rate structures—the kind of knowledge you need in the field—being able to articulate it out loud is a better test of understanding than picking an answer from a list. Or similarly, typing out the answer yourself compared to selecting it from multiple choice could also improve retention.",
         ],
         right: [],
-        imageRight: { src: '/images/audit-hero.png', alt: 'AI note-taking in Slack during the Docebo audit' },
+        imageRight: { src: '/images/audit-2.webp', alt: 'AI note-taking in Slack during the Docebo audit', maxWidth: '280px', marginTop: '-32px' },
       },
       {
         id: 'research',
@@ -261,18 +254,6 @@ export const caseStudies = [
           text: "view the prototype",
         },
       },
-      {
-        id: 'takeaways',
-        heading: 'Takeaways',
-        tags: [],
-        left: [
-          "Solar University was another product just at the finish line that never fully shipped before the bankruptcy came. But this case study is worth documenting — because it demonstrates how AI changes the pace and texture of design work.",
-
-        ],
-        right: [
-          "The audit, research, synthesis, and prototype would have taken days through a conventional process. Using AI at each stage—not to replace the design thinking, but to accelerate the parts that slow it down—compressed that into a single day\'s work.",
-        ],
-      },
     ],
   },
 
@@ -283,9 +264,9 @@ export const caseStudies = [
     titleSize: 55,
     tagsRight: true,
     excerpt: [
-      "Gamification in Volt was a longtime goal based on a fundamental understanding of our users and how sales reps are wired and motivated. I was asked to design motivation and incentive features for Volt at numerous points over the years but beyond the general leaderboard and competitions, gamification features were sidelined for core project management and communication tools.",
+      "Gamification in Volt was a longtime goal based on a fundamental understanding of our users and how sales reps are wired and motivated. I was asked to design motivation and incentive features for Volt at numerous points over the years, but beyond the general leaderboard and competitions, gamification features were sidelined for core project management and communication tools.",
       {
-        prefix: "A badge achievements system—integrated with native notifications, an admin tool for managing badge content, and a social wins feed—was just days from shipping when Freedom Forever filed for bankruptcy. This case study is about what led up to this",
+        prefix: "Finally, a badge achievements system—integrated with native notifications, an admin tool for managing badge content, and a social wins feed—was just days from shipping when Freedom Forever filed for bankruptcy. This case study is about what led up to this",
         italic: " near ",
         suffix: "launch: how I used data and research to correct unrealistic badge thresholds and proved my new Volt 2.0 design system and AI-powered workflow could lead to a faster, more direct path from design intent to shipped code.",
       },

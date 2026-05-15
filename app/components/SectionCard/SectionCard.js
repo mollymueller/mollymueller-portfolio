@@ -2,6 +2,7 @@ import Image from 'next/image';
 import StackedCard from '../StackedCard/StackedCard';
 import PhotoCollage from '../PhotoCollage/PhotoCollage';
 import ContextTooltip from '../ContextTooltip/ContextTooltip';
+import LightboxImage from '../Lightbox/LightboxImage';
 import s from './SectionCard.module.css';
 
 /** Wrap segments of *emphasized text* in <em>; plain strings pass through unchanged. */
@@ -48,6 +49,7 @@ export default function SectionCard({
   introImagesBelow = null,
   imageAboveRight = null,
   imageAboveLeft = null,
+  imageGapBelow = null,
 }) {
   const rightIsBullets =
     rightContent && !Array.isArray(rightContent) && rightContent.bullets;
@@ -106,7 +108,7 @@ export default function SectionCard({
 
         {/* Images — collage or grid (above body copy) */}
         {hasImages && (
-          <div className={s.imagesSection}>
+          <div className={s.imagesSection} style={imageGapBelow !== null ? { marginBottom: imageGapBelow } : {}}>
             {collage ? (
               <PhotoCollage images={images} />
             ) : (
@@ -114,13 +116,15 @@ export default function SectionCard({
                 {images.map((img, i) => (
                   <div key={i} className={s.imageItem}>
                     {img.src ? (
-                      <Image
-                        src={img.src}
-                        alt={img.alt || ''}
-                        width={800}
-                        height={600}
-                        style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
-                      />
+                      <LightboxImage src={img.src} alt={img.alt || ''}>
+                        <Image
+                          src={img.src}
+                          alt={img.alt || ''}
+                          width={800}
+                          height={600}
+                          style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
+                        />
+                      </LightboxImage>
                     ) : (
                       <div className={s.imgPlaceholder} aria-hidden="true" />
                     )}
@@ -138,13 +142,15 @@ export default function SectionCard({
           {/* Left column — portrait image, paragraphs, or collage */}
           <div className={`${s.col}${imageLeft ? ' ' + s.colImageLeft : ''}`}>
             {imageLeft ? (
-              <Image
-                src={imageLeft.src}
-                alt={imageLeft.alt || ''}
-                width={800}
-                height={600}
-                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
-              />
+              <LightboxImage src={imageLeft.src} alt={imageLeft.alt || ''}>
+                <Image
+                  src={imageLeft.src}
+                  alt={imageLeft.alt || ''}
+                  width={800}
+                  height={600}
+                  style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
+                />
+              </LightboxImage>
             ) : null}
             {imageAboveLeft && (
               imageAboveLeft.href ? (
@@ -191,13 +197,15 @@ export default function SectionCard({
             {/* Left-column image(s) — renders below paragraphs inside the left column */}
             {leftCollage && leftCollage.length === 1 && (
               <div className={s.leftImageWrap}>
-                <Image
-                  src={leftCollage[0].src}
-                  alt={leftCollage[0].alt || ''}
-                  width={800}
-                  height={600}
-                  style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
-                />
+                <LightboxImage src={leftCollage[0].src} alt={leftCollage[0].alt || ''}>
+                  <Image
+                    src={leftCollage[0].src}
+                    alt={leftCollage[0].alt || ''}
+                    width={800}
+                    height={600}
+                    style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
+                  />
+                </LightboxImage>
               </div>
             )}
             {leftCollage && leftCollage.length === 2 && (
@@ -240,7 +248,7 @@ export default function SectionCard({
           )}
 
           {/* Right column — paragraphs, bullet list, or portrait image */}
-          <div className={s.col}>
+          <div className={`${s.col}${(imageRight || imagesRight) ? ' ' + s.colHasImage : ''}`}>
             {imageAboveRight && (
               <div className={s.imageAboveRightWrap}>
                 <Image
@@ -255,25 +263,30 @@ export default function SectionCard({
             {imagesRight ? (
               <div className={s.imagesRightStack}>
                 {imagesRight.map((img, i) => (
-                  <Image
-                    key={i}
-                    src={img.src}
-                    alt={img.alt || ''}
-                    width={800}
-                    height={600}
-                    style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
-                  />
+                  <LightboxImage key={i} src={img.src} alt={img.alt || ''}>
+                    <Image
+                      src={img.src}
+                      alt={img.alt || ''}
+                      width={800}
+                      height={600}
+                      style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
+                    />
+                  </LightboxImage>
                 ))}
               </div>
             ) : imageRight ? (
-              <div className={s.imageRightWrap}>
-                <Image
-                  src={imageRight.src}
-                  alt={imageRight.alt || ''}
-                  width={391}
-                  height={632}
-                  style={{ width: '100%', maxWidth: imageRight.maxWidth || '342px', height: 'auto', display: 'block', borderRadius: '4px', margin: '0 auto' }}
-                />
+              <div className={s.imageRightWrap} style={imageRight.marginTop ? { marginTop: imageRight.marginTop } : {}}>
+                <div style={{ maxWidth: imageRight.maxWidth || '342px', width: '100%' }}>
+                  <LightboxImage src={imageRight.src} alt={imageRight.alt || ''}>
+                    <Image
+                      src={imageRight.src}
+                      alt={imageRight.alt || ''}
+                      width={391}
+                      height={632}
+                      style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
+                    />
+                  </LightboxImage>
+                </div>
               </div>
             ) : rightIsBullets ? (
               <>
@@ -326,13 +339,15 @@ export default function SectionCard({
                 {imagesBelow.map((img, i) => (
                   <div key={i} className={s.imageItem} style={img.maxWidth ? { maxWidth: img.maxWidth, margin: '0 auto' } : {}}>
                     {img.src ? (
-                      <Image
-                        src={img.src}
-                        alt={img.alt || ''}
-                        width={1200}
-                        height={600}
-                        style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
-                      />
+                      <LightboxImage src={img.src} alt={img.alt || ''}>
+                        <Image
+                          src={img.src}
+                          alt={img.alt || ''}
+                          width={1200}
+                          height={600}
+                          style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
+                        />
+                      </LightboxImage>
                     ) : (
                       <div className={s.imgPlaceholder} aria-hidden="true" />
                     )}

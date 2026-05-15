@@ -206,6 +206,7 @@ export default async function CaseStudyPage({ params }) {
             leftCollage={section.leftCollage}
             introImages={section.introImages}
             cta={section.cta}
+            imageGapBelow={section.imageGapBelow ?? null}
           />
         ))}
       </div>

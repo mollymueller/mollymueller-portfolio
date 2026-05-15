@@ -96,7 +96,7 @@
 
 /* ── Images section ──────────────────────────── */
 .imagesSection {
-  margin-top: 8px;
+  margin-top: -12px; /* pulls image ~20px closer to heading above */
 }
 
 .imagesBelowSection {
@@ -316,6 +316,17 @@
   .col {
     font-size: 18px;
     line-height: 28px;
+  }
+
+  /* Collapse gap so text split across left/right cols reads without mid-sentence breaks */
+  .columns {
+    gap: 0;
+  }
+
+  /* Image-only right column: render above text on mobile */
+  .colHasImage {
+    order: -1;
+    margin-bottom: 24px;
   }
 
   .mobileImage {

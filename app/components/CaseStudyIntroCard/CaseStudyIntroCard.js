@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import StackedCard from '../StackedCard/StackedCard';
 import ContextTooltip from '../ContextTooltip/ContextTooltip';
+import LightboxImage from '../Lightbox/LightboxImage';
 import s from './CaseStudyIntroCard.module.css';
 
 const TAG_LABELS = {
@@ -44,7 +45,9 @@ export default function CaseStudyIntroCard({
 
       {/* Header row: title left, tags right (when tagsRight) */}
       <div className={s.cardTop}>
-        <h2 className={s.title} style={{ fontSize: titleSize + 'px' }}>{title}</h2>
+        <h2 className={s.title} style={{ fontSize: titleSize + 'px' }}>
+          <Link href={href} className={s.titleLink}>{title}</Link>
+        </h2>
         {tagsRight && (
           <div className={s.tagsInline} aria-label="Case study tags">
             {tagElements}
@@ -136,7 +139,7 @@ export default function CaseStudyIntroCard({
         </div>
 
         {cardImages ? (
-          <Link href={href} className={s.cardImageCol} aria-label={`View full case study: ${title}`}>
+          <div className={s.cardImageCol}>
             {/* Phone cluster */}
             <div className={s.phoneCluster}>
               {cardImages.phones.map((phone, i) => (
@@ -159,7 +162,6 @@ export default function CaseStudyIntroCard({
                       <img src="/images/iphone-frame-cutout.png" alt="" className={s.phoneFrameOverlay} fetchpriority={priority ? 'high' : undefined} />
                     </>
                   ) : (
-                    /* Already-framed PNG — render as-is */
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={phone.src} alt={phone.alt || ''} className={s.phoneFlatImg} fetchpriority={priority ? 'high' : undefined} />
                   )}
@@ -179,10 +181,10 @@ export default function CaseStudyIntroCard({
                 />
               </div>
             )}
-          </Link>
+          </div>
         ) : badgeImages ? (
           /* Gamification layout: badges row above hero image */
-          <Link href={href} className={s.badgesImageCol} aria-label={`View full case study: ${title}`}>
+          <div className={s.badgesImageCol}>
             <div className={s.badgesRow}>
               {badgeImages.map((badge, i) => (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -190,37 +192,41 @@ export default function CaseStudyIntroCard({
               ))}
             </div>
             {image && (
-              <Image
-                src={image}
-                alt={imageAlt || title}
-                width={910}
-                height={766}
-                sizes="(max-width: 767px) 100vw, 560px"
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-                priority={priority}
-                fetchPriority={priority ? 'high' : undefined}
-              />
+              <LightboxImage src={image} alt={imageAlt || title}>
+                <Image
+                  src={image}
+                  alt={imageAlt || title}
+                  width={910}
+                  height={766}
+                  sizes="(max-width: 767px) 100vw, 560px"
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  priority={priority}
+                  fetchPriority={priority ? 'high' : undefined}
+                />
+              </LightboxImage>
             )}
-          </Link>
+          </div>
         ) : (
-          <Link href={href} className={s.imageCol} style={{ marginTop: imageOffset }} aria-label={`View full case study: ${title}`}>
+          <div className={s.imageCol} style={{ marginTop: imageOffset }}>
             {image ? (
-              <Image
-                src={image}
-                alt={imageAlt || title}
-                width={5270}
-                height={4096}
-                sizes="(max-width: 767px) 100vw, 607px"
-                style={{ width: '100%', height: 'auto', aspectRatio: '5270 / 4096' }}
-                priority={priority}
-                fetchPriority={priority ? 'high' : undefined}
-              />
+              <LightboxImage src={image} alt={imageAlt || title}>
+                <Image
+                  src={image}
+                  alt={imageAlt || title}
+                  width={5270}
+                  height={4096}
+                  sizes="(max-width: 767px) 100vw, 607px"
+                  style={{ width: '100%', height: 'auto', aspectRatio: '5270 / 4096' }}
+                  priority={priority}
+                  fetchPriority={priority ? 'high' : undefined}
+                />
+              </LightboxImage>
             ) : (
               <div className={s.imagePlaceholder} aria-hidden="true">
                 image
               </div>
             )}
-          </Link>
+          </div>
         )}
       </div>
 
