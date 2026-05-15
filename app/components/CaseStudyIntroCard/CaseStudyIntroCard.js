@@ -73,6 +73,7 @@ export default function CaseStudyIntroCard({
                   <>
                     {para.leadLink ? (
                       <>
+                        {para.prefix && para.prefix}
                         <a
                           href={para.leadLink.href}
                           target="_blank"

@@ -16,28 +16,29 @@ export const caseStudies = [
     tagsRight: true,
     excerpt: [
       {
+        prefix: 'I led design and user research for ',
         leadLink: { text: 'Volt', href: 'https://apps.apple.com/us/app/volt/id1644756647' },
-        leadSep: ' by ',
-        lead: 'Freedom Forever',
-        text: 'is a lead management and canvassing app built for solar sales teams.',
+        leadSep: ', ',
+        lead: "Freedom Forever's",
         tooltip: {
           title: 'Background & Context',
           paragraphs: [
-            'I worked at Freedom Forever—one of the largest residential solar installers in the U.S.—from 2021 to 2026.',
-            'A new law that passed in 2025 lead to cascading bankruptcies in the solar industry and ultimately claimed Freedom Forever. My time there abruptly ended when the company filed for bankruptcy in April of 2026.',
+            'I worked at Freedom Forever—one of the largest residential solar installers in the U.S.—from 2021 to 2026. My time there abruptly ended when the company filed for bankruptcy in April of 2026 following cascading bankruptcies in the residential solar industry.',
+
             'Prior to the bankruptcy, the software team kicked into high gear to compensate for cash flow crunches and reduced staff. These financial challenges accelerated AI adoption. Led by our VP of Product and Engineering, I received a master class and crash course in utilizing AI tools and best practices alongside my fellow product and developer colleagues.',
           ],
         },
+        text: 'proprietary mobile sales app, from MVP through two full redesigns, and countless enhancements and feature releases. Most recently I crossed into front-end AI engineering and built out a design system in code, shipped the full redesign, and developed AI-powered tooling the team used to ship faster and implement design more consistently.',
       },
-      "I was the lead designer on Volt from it\'s origins and MVP launch. Over the course of a few years, I led Volt through two redesigns, designed many new features and enhancements, and initiated direct user research. And as our product and engineering AI infrastructure took off, I developed and coded a new design system and component library for Volt 2.0. This case study goes into more detail on the Volt 2.0 rebrand.",
+      'This case study goes into more detail on the Volt 2.0 rebrand.',
     ],
     image: '/images/volt-hero.webp',
     imageAlt: 'Volt 2.0 — a suite of screens from the redesigned mobile app',
     imageOffset: 32,
     introImage: null,
-    subtitle: 'A mobile app rebrand, a design system, and what can happen when a designer gets into the code',
+    subtitle: 'A mobile app rebrand, a design system, and what can happen when a designer gets into the code 🤗',
     role: 'Lead designer and front-end design engineer',
-    scope: 'Design system, component library, Figma-to-code theming architecture, AI assisted coding, AI design agent and skill creation',
+    scope: 'Design system, component library, Figma-to-code theming architecture, AI-assisted coding, AI design agent and skill creation',
     sections: [
       {
         id: 'origins',
@@ -46,9 +47,9 @@ export const caseStudies = [
         left: [
     
           {
-            prefix: "The need for a custom native app for our sales teams had been building at Freedom Forever for years: ",
+            prefix: "The need for a custom native app for our sales teams had been brewing at Freedom Forever for years: ",
             lead: "our sales dealers",
-            text: "were paying up to $30k a month for third-party canvassing software that wasn\'t integrated with our platform — a Freedom Forever solution meant free, fully customized tooling and a genuine differentiator in the industry.",
+            text: "were paying up to $30k a month for third-party canvassing software that wasn\'t integrated with our platform—a Freedom Forever solution meant free, fully customized tooling and a genuine differentiator in the industry.",
             tooltip: {
               title: "Sales Dealer Organizations",
               paragraphs: [
@@ -56,17 +57,17 @@ export const caseStudies = [
               ],
             },
           },
-          "In September 2022, the app found its moment and Volt was born. I took the lead design role and worked through daily stand-ups and sprints with a small team. We launched the MVP in January 2023 with its core features prioritized for sales reps and appointment setters in the field.",
+          "In September 2022, the app found its moment and Volt was born. I took the lead design role and we launched the MVP in January 2023 with its core features: door knocking tools, lead management, leaderboards, and",
           
         ],
         right: [
-         'Within the first four months, downloads doubled, leads created grew from 59k to 583k, and events per user tripled.', 
-         'Over the next few years, I led Volt through two redesigns — introducing a structured design system in Figma, dark and light mode variables, and an expanded component library — alongside the user research program and the 2.0 rebrand highlighted in this case study. By March 2026, the app had grown to 18,000 monthly active users and expanded to include commissions pipeline, project management, chat, rep onboarding, an activity feed, and enhanced gamification.',
+          'appointment scheduling prioritized for sales reps and appointment setters in the field.',
+         'Within the first four months, downloads doubled, leads created grew from 59k to 583k, and events per user tripled. By March 2026, the app had grown to 18,000 monthly active users—with the majority consistently rating satisfaction with Volt 5/5—and features expanded to include competitions, commissions pipeline, project management, chat, rep onboarding, activity feeds, push notifications, and more.',
         ],
         images: [
           { src: '/images/volt-mvp-mockup.webp', alt: '[ MVP ]' },
           { src: '/images/volt-1-mockup.webp',   alt: '[ Volt 1.0 ]' },
-          { src: '/images/volt-2-mockup.png',   alt: '[ Volt 2.0 ]' },
+          { src: '/images/volt-2-mockup.webp',   alt: '[ Volt 2.0 ]' },
         ],
       },
       {
@@ -74,11 +75,11 @@ export const caseStudies = [
         heading: 'The 2.0 Rebrand',
         tags: [],
         left: [
-          'Solar Pros — Volt\'s largest dealer partner at nearly 24,000 users and 64% of total MAU — merged with another super dealer and solidified their partnership with us. The stakeholder sales leaders had a clear ask: Volt should follow their branding and feel "more swaggy" and in line with the sales rep culture.',
-          'Working with their brand guidelines and direction, I developed the new look for Volt. The differentiator between the 1.0 rebrand and 2.0 was that this time I had a new superpower — Claude Code as my front-end engineering partner.',
+          'Solar Pros—Volt\'s largest dealer partner at 64% of total MAU—merged with another super dealer. The stakeholder sales leaders had a clear ask surrounding the merger: Volt should feal native to their branding and speak to a "swaggy" sales rep culture.',
+          'Working with their brand guidelines and direction, I developed the new look for Volt. The differentiator between the 1.0 rebrand and 2.0 was that this time I had a new superpower—Claude Code as my front-end engineering partner.',
         ],
         right: [
-          'What started in Figma as a carefully thought-out design system became an opportunity to implement a theme-based token system with more defined rules for typography, colors, and components in the code itself — something my systems-obsessed, AI-curious brain could not resist.',
+          'What started in Figma as a carefully thought-out design system became an opportunity to implement a theme-based token system with more defined rules for typography, colors, and components in the code itself—something my systems-obsessed, AI-curious brain could not resist.',
           'The result was a new visual language for Volt: a token-based design system that works consistently in Figma and in code, plus an AI-powered agent and design skill that checks for anti-patterns and hard-coded values and offers style guide corrections for anyone shipping Volt code.',
         ],
         images: [
@@ -90,12 +91,12 @@ export const caseStudies = [
         heading: 'Building the Design System',
         tags: [],
         left: [
-          'Before I defined the new design system, I knew where I wanted to end up — a simple yet visually striking system that could translate cleanly between light and dark modes and into the codebase, with the ultimate goal of creating an AI skill or agent that could implement the design rules.',
-          'I started in Figma, designing core screens and iterating until I had a rules-based system I was satisfied with and had stakeholder sign-off on. Then I shared the Figma design system — typography styles, color and shape variables — with Claude, with the direction to improve the code architecture from a design system standpoint. Working with Claude Code and the team\'s developers, we devised the plan to implement the full redesign in code.',
+          'Before I defined the new design system, I knew where I wanted to end up—with a simple yet visually striking system that could translate cleanly into the codebase and become the backbone of a design guide AI skill or agent.',
+          'I started in Figma, designing core screens and iterating until I had the skeleton of a rules-based system I was satisfied with and had stakeholder sign-off. Then I shared the Figma design system with Claude with the direction to improve the current code architecture from a design system standpoint. Working with Claude Code and the team\'s developers, we devised the plan to replace hard coded UI elements with design tokens and a style theming architecture.',
           'One added complexity: the directive to use a dark gradient for the app\'s dark-themed UI. Volt had always been dark-first, so I put extra care into getting that primary dark mode *just right*.',
         ],
         right: {
-          para: 'It required transparent components specific to the dark theme to maintain the modern, "swaggy" look — which meant the most straightforward token architecture was off the table. I still took pains to ensure the system was rules-based and legible to both developers and AI agents.',
+          para: 'It required transparent components specific to the dark theme to maintain the modern, "swaggy" look. This meant the most straightforward token architecture was off the table. I still took pains to ensure the system was rules-based and legible to both developers and AI agents.',
           intro: 'The design system covers:',
           bullets: [
             'Full dark and light mode palettes with semantic color roles',
@@ -116,12 +117,12 @@ export const caseStudies = [
         heading: 'into the code',
         tags: [],
         left: [
-          'I implemented the full UI rebrand in the app\'s code, iterating on the smallest details with Claude until the final screens mirrored my design vision. I also had Claude generate an HTML design guide that we referenced and iterated on as we went — which meant I was refining the design system and the code at the same time.',
-          'The system in the code is organized around semantic tokens layered over primitives: primitives define the raw values, semantic tokens map those primitives to roles — text.primary, surface.secondary, etc. A component never references a raw hex value; it references a role.',
+          'I implemented the full UI rebrand in the app\'s code, iterating on the smallest details with Claude until the final screens mirrored my design vision. I also had Claude generate an HTML design guide that we referenced and iterated on as we went—which meant I was refining the design system and the code at the same time.',
+          'The system in the code is organized around semantic tokens layered over primitives: primitives define the raw values, semantic tokens map those',
         ],
         right: [
-          'The architecture routes everything through a single centralized theme object passed down from PaperProvider — colors, opacity variants, gradient tokens, typography, spacing, shapes, component-specific values — all defined once, flowing everywhere.', 
-          'The typography system required particular care. React Native requires exact font file names rather than family names with weights — so we built a font families map that resolves each weight to the correct platform-specific file name for iOS and Android. The full type scale — display, headings, subtitles, overline, body, caption — was defined from Figma specs and wired into the theme.',
+          'primitives to roles — text.primary, surface.secondary, etc. A component never references a raw hex value; it references a role.', 
+          'The architecture routed everything through a single centralized theme object passed down from PaperProvider—colors, opacity variants, gradient tokens, typography, spacing, shapes, and component-specific values—all defined once, flowing everywhere. This made it possible to rebrand Volt without affecting another app on our mobile platform that used a few shared components.', 
         ],
         images: [
           { src: '/images/volt-code-1.webp', alt: '' },
@@ -133,14 +134,14 @@ export const caseStudies = [
         heading: 'The AI Tooling Layer',
         tags: [],
         left: [
-          'Once the design system was fully defined and documented, I translated the entire system into a suite of Claude Code tooling — a skill, two slash commands, and a dedicated agent — tools anyone coding in the Volt app could use before QA and shipping.',
-          'The Skill — Volt Style Guide Expert loads the full design system context — token values, component rules, dark/light mode specs, layout principles — so every implementation follows the Volt system.',
-          'Slash Commands\n/volt-tokens — reads token values directly from source files and returns current specs by category (colors, typography, spacing, shapes, components).',
+          'Because I was deliberate and iterative about creating a systematic, rules based design guide in sync with the code, translating it into a Claude skill was straightforward. Once the design system was fully defined, I translated the entire system into a suite of Claude Code tooling—a skill, two slash commands, and a dedicated agent—tools anyone coding in the Volt app could use before QA and shipping.',
+          'The Skill—Volt Style Guide Expert loads the full design system context—token values, component rules, dark/light mode specs, layout principles.',
+          'Slash Commands\n/volt-tokens—reads token values directly from source files and returns current specs by category (colors, typography, spacing, shapes, components).',
         ],
         right: [
-          '/volt-check — audits any file for design system violations across 10 categories. Reports issues with exact fixes but does not auto-fix — the developer decides what to change.',
+          '/volt-check — audits any file for design system violations across 10 categories. Reports issues with exact fixes but does not auto-fix—the developer decides what to change.',
           'The volt-reviewer-agent: A dedicated compliance agent that reviews git diffs for design system violations before code is committed or a PR is opened. Checks only new or modified lines, not entire files — flagging token misuse, anti-patterns, and component violations at the diff level.',
-          'The tooling required testing and iteration, but after a few rounds the skills were working as expected — catching hard-coded values and style rule violations and offering corrections.',
+          'The tooling required testing and iteration, but after a few rounds the skills were working as expected—catching hard-coded values and most style rule violations and offering corrections that could easily be implemented.',
         ],
         images: [
           { src: '/images/volt-ai-tooling-1.png', alt: '' },
@@ -169,7 +170,7 @@ export const caseStudies = [
     titleSize: 55,
     tagsRight: true,
     excerpt: [
-      "Solar University is an in-house Learning Management System (LMS) that was kicked off by our PM and a senior developer while I was still heads-down finishing the Volt 2.0 redesign. Building an in-house LMS would have been time prohibitive just a handful of months prior, but with AI we could do it ourselves in a fraction of the time. This also meant the PM and developer could move fast with AI handling the early design scaffolding. In order to provide designs and direction without stalling the rebrand, I conducted a compressed design process: a full UX audit with AI-assisted note-taking, an AI-research and brainstorm session that both validated my instincts and surfaced new ideas, and a working prototype delivered in about a day.",
+      "Solar University is an in-house Learning Management System (LMS) that was kicked off by our PM and senior developer while I was still heads-down finishing the Volt 2.0 redesign. Building an in-house LMS would have been time prohibitive just a handful of months prior, but with AI we could do it ourselves in a fraction of the time. This also meant the PM and developer could move fast with AI handling the early design scaffolding. In order to get my designs and direction in without stalling the rebrand, I conducted a compressed design process: a full UX audit with AI-assisted note-taking, an AI-research and brainstorm session that both validated my instincts and surfaced new ideas, and a working prototype delivered in about an interactive day.",
     ],
     image: '/images/solar-university-hero.png',
     imageAlt: 'Solar University — learning tracks dashboard on a laptop',
@@ -188,7 +189,7 @@ export const caseStudies = [
     sections: [
       {
         id: 'context',
-        heading: 'The context',
+        heading: 'The business case',
         tags: [],
         introImages: [
           { src: '/images/solar-lms-dashboard.png', alt: 'Solar University learning tracks dashboard', type: 'laptop' },
@@ -196,10 +197,10 @@ export const caseStudies = [
           { src: '/images/solar-lms-quiz.png',       alt: 'Solar University quiz screen',              type: 'laptop' },
         ],
         left: [
-          "The Solar University is an in-house Learning Management System (LMS) kicked off by our PM and a senior developer while I was still heads-down finishing the Volt 2.0 redesign. The business case was obvious: we were paying $20,000 a month for Docebo, a clunky third-party training platform that was prone to technical issues out of our control. It was also one of the first touch points reps had with our system—the final onboarding step required in order to fully access Volt and start selling. Building an in-house LMS would have been time prohibitive just a handful of months prior, but with AI we could do it ourselves in a fraction of the time.",
+          "The business case for an in-house LMS was obvious: we were paying $20,000 a month for Docebo, a clunky third-party training platform that was prone to technical issues out of our control. It was also one of the first touch points reps had with our system during onboarding and was required before fully accessing Volt. Building an in-house LMS would have been time prohibitive just a handful of months prior, but with AI we could do it ourselves in a fraction of the time.",
         ],
         right: [
-          "This also meant the PM and developer could move fast with AI handling the early design scaffolding. I knew if I didn\'t get my design input in early, the product would get too far down a road without it. Online learning UX is something I\'m genuinely interested in so I made sure to carve out some time. Over the course of one evening and into the next day, I conducted a compressed design process: a full UX audit with AI-assisted note-taking, an AI-research and brainstorm session that both validated my instincts and surfaced new ideas, and a working prototype delivered in roughly half a day.",
+          "That also meant the PM and developer could move fast without waiting for a design hand-off. Online learning UX is something I'm genuinely interested in so I pivoted quickly to make sure the product didn't get too far down the road without my input. I took a brief pause on the redesign to conduct a full audit, research, and do some rapid Figma Make prototype in order to quickly communicate the UX improvements I'd identified that our in-house LMS should solve out of the gate.",
         ],
       },
       {
@@ -207,9 +208,9 @@ export const caseStudies = [
         heading: 'The Audit',
         tags: [],
         left: [
-          "First I went through our full onboarding flow the way a rep would—hitting the required online training and going through the full set of lessons. As I went, I opened a Claude chat in Slack as a running notepad, recording my observations via voice transcription as they came to me.",
+          "I went through our full onboarding flow the way a rep would—hitting the required online training and going through the full set of lessons. As I went, I opened a Claude chat in Slack as a running notepad, recording my observations via voice transcription as they came to me.",
           "I noted what I thought the platform got right—the lessons were bite-size less than 10 minutes each with some interactivity, layout and format variety, with questions or quizzes to confirm comprehension. And I noted the UX problems—the bite-sized lessons encouraged me to keep going but they didn\'t automatically lead to the next required lesson. Instead I lost momentum figuring out where I was and what was next. And overall the mobile experience was not clean and responsive.",
-          "Ideas surfaced mid-audit: what if instead of a standard quiz, certain lessons asked reps to record themselves explaining a concept in their own words? For technical content—net metering, true-ups, utility rate structures—the kind of knowledge you need in the field, being able to articulate it out loud is a better test of understanding than picking an answer from a list.",
+          "Ideas surfaced mid-audit: what if instead of a standard quiz, certain lessons asked reps to record themselves explaining a concept in their own words? For technical content like net metering, true-ups, utility rate structures—the kind of knowledge you need in the field—being able to articulate it out loud is a better test of understanding than picking an answer from a list. Or similarly, typing out the answer yourself compared to selecting it from multiple choice could also improve retention.",
         ],
         right: [],
         imageRight: { src: '/images/audit-hero.png', alt: 'AI note-taking in Slack during the Docebo audit' },
@@ -219,12 +220,12 @@ export const caseStudies = [
         heading: 'Research & Brainstorming',
         tags: [],
         left: [],
-        imageLeft: { src: '/images/lms-research.png', alt: 'Research findings for Solar University LMS' },
+        imageLeft: { src: '/images/lms-report.png', alt: 'Research findings for Solar University LMS' },
         right: [
           "Having Claude in the loop as a note-taking and refining partner meant that by the time I was done with the audit, I had organized, usable feedback.",
-          "After the audit I shifted into research mode, asking Claude to surface best practices for online learning UX. Some of what came back confirmed what I\'d already seen—the bite-sized module format Docebo actually had right, with lessons landing around 7 to 10 minutes, is well-supported. Attention drops fast in online learning, and short completable units give users a sense of achievement, motivation, and confidence to keep going.",
-          "The research also sparked ideas for potential enhancements beyond the MVP: what if our admin tool utilized an \"LMS-expert\" AI agent to assist the people building the courses? Flagging when a lesson was running too long, suggesting cleaner explanations, surfacing gaps in a module\'s structure before it went live, or offering a layout variation.",
-          "The result was a plan for what our system\'s MVP must address—following simple best practices and fixing the clunkiness of Docebo and a roadmap for future AI enhancements.",
+          "After the audit I shifted into research mode, asking Claude to surface best practices for online learning UX. Some of what came back confirmed what I'd already seen—the bite-sized module format Docebo actually had right, with lessons landing around 7 to 10 minutes, is well-supported. Attention drops fast in online learning, and short completable units give users a sense of achievement, motivation, and confidence to keep going.",
+          "The research also sparked ideas for further down the road: what if our admin tool utilized an \"LMS-expert\" AI agent to assist the people building the courses? Flagging when a lesson was running too long or suggesting cleaner explanations or a new layout variation.",
+          "The result was a plan for what our system\'s MVP must address—follow simple best practices and fix the clunkiness of Docebo plus a roadmap for future AI enhancements.",
         ],
       },
       {
@@ -232,8 +233,8 @@ export const caseStudies = [
         heading: 'Quick Prototyping',
         tags: [],
         left: [
-          "With the audit feedback and research in hand, I moved into Figma and built a working interactive prototype in roughly half a day. The goal wasn\'t pixel perfection or realistic content— it was to show the flow, the structure, and the decisions I\'d made— something the PM and developer could actually click through rather than interpret from static mockups.",
-          "The prototype is built on the Volt 2.0 design system, which meant I wasn\'t starting from zero on visual language. I focused my time on the architecture and the UX decisions that needed to be visible to be understood.",
+          "With the audit feedback and research in hand, I moved into Figma and built a working interactive prototype in roughly half a day. The goal wasn't pixel perfection or realistic content— it was to show the flow, the structure, and the decisions I'd made.",
+          "The prototype is built on the Volt 2.0 design system which already had prompts for the design skill that I could quickly modify and feed to Figma Make. That meant I could focus my time on the architecture and the flows, transitions, and animations and show rather than tell.",
         ],
         right: {
           para: "One of the clearest problems in the Docebo audit was the break in momentum between lessons. In the prototype, finishing a lesson immediately serves up the next one. If a rep is working through a track, the experience is continuous until the track is done.",
@@ -261,11 +262,10 @@ export const caseStudies = [
         tags: [],
         left: [
           "Solar University was another product just at the finish line that never fully shipped before the bankruptcy came. But this case study is worth documenting — because it demonstrates how AI changes the pace and texture of design work.",
-          "The audit, research, synthesis, and prototype would have taken days through a conventional process. Using AI at each stage—not to replace the design thinking, but to accelerate the parts that slow it down—compressed that into a single day\'s work.",
+
         ],
         right: [
-          "The research-to-prototype path is the part I\'d carry forward into any future work on learning products. Jumping straight into a working prototype with AI rather than going through rounds of static screens first meant the PM and developer had something to react to immediately.",
-          "The combination of genuine design expertise and AI-assisted speed is something I want to keep exploring — this was an early proof of what that can look like.",
+          "The audit, research, synthesis, and prototype would have taken days through a conventional process. Using AI at each stage—not to replace the design thinking, but to accelerate the parts that slow it down—compressed that into a single day\'s work.",
         ],
       },
     ],
