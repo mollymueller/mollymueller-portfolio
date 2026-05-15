@@ -67,7 +67,13 @@ export default function CaseStudyIntroCard({
           <div className={s.body}>
             {excerpt.map((para, i) => (
               <p key={i}>
-                {typeof para === 'string' ? para : para.italic ? (
+                {typeof para === 'string' ? para : para.link ? (
+                  <>
+                    {para.prefix && para.prefix}
+                    <a href={para.link.href} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-accent)', textDecoration: 'underline' }}>{para.link.text}</a>
+                    {para.suffix && para.suffix}
+                  </>
+                ) : para.italic ? (
                   <>{para.prefix}<em>{para.italic}</em>{para.suffix}</>
                 ) : (
                   <>

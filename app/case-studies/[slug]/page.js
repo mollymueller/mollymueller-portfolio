@@ -197,7 +197,11 @@ export default async function CaseStudyPage({ params }) {
             imagesBelow={section.imagesBelow}
             collage={section.collage}
             imageRight={section.imageRight}
+            imagesRight={section.imagesRight}
             imageLeft={section.imageLeft}
+            imageAboveRight={section.imageAboveRight}
+            imageAboveLeft={section.imageAboveLeft}
+            introImagesBelow={section.introImagesBelow}
             collageBelow={section.collageBelow}
             leftCollage={section.leftCollage}
             introImages={section.introImages}

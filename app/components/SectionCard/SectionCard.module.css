@@ -99,6 +99,10 @@
   margin-top: 8px;
 }
 
+.imagesBelowSection {
+  margin-top: 4px;
+}
+
 /* Grid: 1, 2, or 3 images in equal columns */
 .imagesRow {
   display: flex;
@@ -137,6 +141,13 @@
 .colImageLeft {
   display: flex;
   align-items: center;
+}
+
+/* ── Right-column stacked images ────────────── */
+.imagesRightStack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 /* ── Right-column portrait image ────────────── */

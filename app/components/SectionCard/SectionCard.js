@@ -40,10 +40,14 @@ export default function SectionCard({
   mobileImage = null,
   cta = null,
   imageRight = null,
+  imagesRight = null,
   imageLeft = null,
   collageBelow = false,
   leftCollage = null,
   introImages = null,
+  introImagesBelow = null,
+  imageAboveRight = null,
+  imageAboveLeft = null,
 }) {
   const rightIsBullets =
     rightContent && !Array.isArray(rightContent) && rightContent.bullets;
@@ -142,6 +146,27 @@ export default function SectionCard({
                 style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
               />
             ) : null}
+            {imageAboveLeft && (
+              imageAboveLeft.href ? (
+                <a href={imageAboveLeft.href} target="_blank" rel="noopener noreferrer" style={{ display: 'block', marginBottom: '16px' }}>
+                  <Image
+                    src={imageAboveLeft.src}
+                    alt={imageAboveLeft.alt || ''}
+                    width={800}
+                    height={600}
+                    style={{ width: 'calc(100% - 20px)', height: 'auto', display: 'block', borderRadius: '4px' }}
+                  />
+                </a>
+              ) : (
+                <Image
+                  src={imageAboveLeft.src}
+                  alt={imageAboveLeft.alt || ''}
+                  width={800}
+                  height={600}
+                  style={{ width: 'calc(100% - 20px)', height: 'auto', display: 'block', borderRadius: '4px', marginBottom: '16px' }}
+                />
+              )
+            )}
             {leftContent.map((para, i) => (
               <p key={i}>
                 {typeof para === 'string' ? parseEmphasisSegments(para) : (
@@ -216,7 +241,31 @@ export default function SectionCard({
 
           {/* Right column — paragraphs, bullet list, or portrait image */}
           <div className={s.col}>
-            {imageRight ? (
+            {imageAboveRight && (
+              <div className={s.imageAboveRightWrap}>
+                <Image
+                  src={imageAboveRight.src}
+                  alt={imageAboveRight.alt || ''}
+                  width={800}
+                  height={600}
+                  style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px', marginBottom: '16px' }}
+                />
+              </div>
+            )}
+            {imagesRight ? (
+              <div className={s.imagesRightStack}>
+                {imagesRight.map((img, i) => (
+                  <Image
+                    key={i}
+                    src={img.src}
+                    alt={img.alt || ''}
+                    width={800}
+                    height={600}
+                    style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }}
+                  />
+                ))}
+              </div>
+            ) : imageRight ? (
               <div className={s.imageRightWrap}>
                 <Image
                   src={imageRight.src}
@@ -252,7 +301,7 @@ export default function SectionCard({
 
         {/* Images below body copy */}
         {imagesBelow && imagesBelow.length > 0 && (
-          <div className={s.imagesSection}>
+          <div className={s.imagesBelowSection}>
             {collageBelow && imagesBelow.length === 2 ? (
               <div className={s.imagesOverlapWrap}>
                 <Image
@@ -292,6 +341,39 @@ export default function SectionCard({
                 ))}
               </div>
             )}
+          </div>
+        )}
+
+        {/* Intro-style images below body copy (laptop | phone | laptop) */}
+        {introImagesBelow && introImagesBelow.length > 0 && (
+          <div className={s.introImageRow}>
+            {introImagesBelow.map((img, i) => (
+              <div
+                key={i}
+                className={img.type === 'phone' ? s.introPhoneWrap : s.introLaptopWrap}
+              >
+                {img.isGif ? (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/iphone-background.png" alt="" className={s.introPhoneBg} />
+                    <div className={s.introGifWrap}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={img.src} alt={img.alt || ''} className={s.introGifEl} />
+                    </div>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/iphone-frame-cutout.png" alt="" className={s.introPhoneFrameOverlay} />
+                  </>
+                ) : (
+                  <Image
+                    src={img.src}
+                    alt={img.alt || ''}
+                    fill
+                    className={s.introImageEl}
+                    sizes="(max-width: 767px) 80vw, 38vw"
+                  />
+                )}
+              </div>
+            ))}
           </div>
         )}
 
