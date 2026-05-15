@@ -33,6 +33,24 @@ export const metadata = {
   title: 'Molly Mueller – AI-Empowered, Systems-Obsessed, Data-Driven Product Designer',
   description:
     'Molly Mueller is an AI-empowered, systems-obsessed, data-driven product designer building things that look, feel, and work just right.',
+  openGraph: {
+    title: 'Molly Mueller – AI-Empowered, Systems-Obsessed, Data-Driven Product Designer',
+    description:
+      'Molly Mueller is an AI-empowered, systems-obsessed, data-driven product designer building things that look, feel, and work just right.',
+    url: 'https://mollymueller.com',
+    images: [
+      {
+        url: 'https://mollymueller.com/images/og-image.png',
+        width: 1200,
+        height: 627,
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://mollymueller.com/images/og-image.png'],
+  },
 };
 
 export default function RootLayout({ children }) {
