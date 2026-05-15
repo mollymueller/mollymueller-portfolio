@@ -83,6 +83,7 @@ function ScaledLine({ id, shadeWords, letters, width, height, scaleWidth }) {
       el.style.transformOrigin = 'top left';
       el.style.transform = `translateX(${offsetX}px) scale(${ratio})`;
       el.style.height = `${height * ratio}px`;
+      el.style.visibility = 'visible';
     }
     scale();
     window.addEventListener('resize', scale);
@@ -118,6 +119,7 @@ export default function MollyMuellerHeader({ id = 'mm-header' }) {
       const offsetX = (containerW - visualW) / 2;
       el.style.transformOrigin = 'top left';
       el.style.transform = `translateX(${offsetX}px) scale(${ratio})`;
+      el.style.visibility = 'visible';
     }
     scale();
     window.addEventListener('resize', scale);

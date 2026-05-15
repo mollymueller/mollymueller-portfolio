@@ -61,7 +61,10 @@
       "Bash(sips -g pixelWidth -g pixelHeight /Users/mollymueller/Documents/portoflio/public/images/__TRACKED_VAR__)",
       "Bash(git add *)",
       "Bash(kill 41310)",
-      "Bash(git diff *)"
+      "Bash(git diff *)",
+      "Bash(cat /proc/net/tcp 2>/dev/null || lsof -c node -i TCP:3000 2>/dev/null | head -10)",
+      "Bash(git -C /Users/mollymueller/Documents/portoflio log --oneline -10 -- app/globals.css)",
+      "Bash(git -C /Users/mollymueller/Documents/portoflio log --oneline)"
     ]
   }
 }

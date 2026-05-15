@@ -14,6 +14,7 @@
 .headerInner {
   width: 1233px;
   height: 158px;
+  visibility: hidden; /* revealed by JS after transform is applied */
   /* transform and transformOrigin set by JS (useLayoutEffect) */
 }
 
