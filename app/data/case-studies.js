@@ -16,7 +16,7 @@ export const caseStudies = [
     tagsRight: true,
     excerpt: [
       {
-        prefix: 'I led design and user research for ',
+        prefix: 'I lead design and user research for ',
         leadLink: { text: 'Volt', href: 'https://apps.apple.com/us/app/volt/id1644756647' },
         leadSep: ', ',
         lead: "Freedom Forever's",
