@@ -16,7 +16,7 @@ export const caseStudies = [
     tagsRight: true,
     excerpt: [
       {
-        prefix: 'I lead design and user research for ',
+        prefix: 'I led design and user research for ',
         leadLink: { text: 'Volt', href: 'https://apps.apple.com/us/app/volt/id1644756647' },
         leadSep: ', ',
         lead: "Freedom Forever's",
@@ -28,9 +28,9 @@ export const caseStudies = [
             'Prior to the bankruptcy, the software team kicked into high gear to compensate for cash flow crunches and reduced staff. These financial challenges accelerated AI adoption. Led by our VP of Product and Engineering, I received a master class and crash course in utilizing AI tools and best practices alongside my fellow product and developer colleagues.',
           ],
         },
-        text: 'proprietary mobile sales app—from MVP through two full redesigns, and countless enhancements and feature releases. Most recently I crossed into front-end AI engineering and built out a design system in code, shipped the full redesign, and developed AI-powered tooling that the team used to ship faster and implement design more consistently.',
+        text: 'proprietary mobile sales app—from MVP through two full redesigns, and countless enhancements and feature releases. Recently I crossed into front-end AI engineering and built a design system in code, shipped the full redesign, and developed AI-powered tooling the team used to ship faster and implement design consistently.',
       },
-      'My case studies here are all connected: this one goes into detail on the Volt 2.0 rebrand, while the other two were the first features to test the rebrand and related AI tools in practice.',
+      'My case studies here are all related to Volt 2.0. The Volt 2.0 iteration  wasn\'t just about the new look and design system--it was about new AI workflows that empowered me to elevate the UX and UI of the shipped product, work faster and communicate better with PMs and developers, and dive into the data directly to correct misalignment between a gamification feature and actual user behavior.',
     ],
     image: '/images/volt-hero.webp',
     imageAlt: 'Volt 2.0 — a suite of screens from the redesigned mobile app',
@@ -61,8 +61,8 @@ export const caseStudies = [
           
         ],
         right: [
-          'appointment scheduling prioritized for sales reps and appointment setters in the field.',
-         'Within the first four months, downloads doubled, leads created grew from 59k to 583k, and events per user tripled. By March 2026, the app had grown to 18,000 monthly active users—with the majority consistently rating satisfaction with Volt 5/5—and features expanded to include competitions, commissions pipeline, project management, chat, rep onboarding, activity feeds, push notifications, and more.',
+          'appointment scheduling; prioritized for sales reps and appointment setters in the field.',
+         'Within the first four months, downloads doubled, leads created grew from 59k to 583k, and events per user tripled. By March 2026, the app had grown to 18,000 monthly active users—with the majority consistently rating satisfaction with Volt 5/5. Features expanded to include competitions, commissions pipeline, project management, chat, rep onboarding, activity feeds, push notifications, and more.',
         ],
         images: [
           { src: '/images/volt-mvp-mockup.webp', alt: '[ MVP ]' },
@@ -164,7 +164,7 @@ export const caseStudies = [
     tagsRight: true,
     excerpt: [
       {
-        prefix: "Solar University is an in-house Learning Management System (LMS) that was kicked off by our PM and senior developer while I was still heads-down finishing the Volt 2.0 redesign. Building an in-house LMS would have been time prohibitive just a handful of months prior, but with AI we could do it ourselves in a fraction of the time. This also meant the PM and developer could utilize AI to handle the early design scaffolding. In order to get my design direction in without stalling the rebrand, I conducted a compressed design process: a full UX audit with AI-assisted note-taking, an AI-research and brainstorm session that both validated my instincts and surfaced new ideas, and an ",
+        prefix: "Solar University is an in-house Learning Management System (LMS) kicked off by our PM and senior developer while I was still heads-down finishing the Volt 2.0 redesign. Building an in-house LMS would have been time prohibitive just a handful of months prior, but with AI we could do it ourselves in a fraction of the time. This also meant the PM and developer could utilize AI to handle the early design scaffolding. In order to get my design direction in without stalling the rebrand, I conducted a compressed design process: a full UX audit with AI-assisted note-taking, an AI-research and brainstorm session that both validated my instincts and surfaced new ideas, and an ",
         link: { text: "interactive prototype", href: "https://solar-university.figma.site/" },
         suffix: " delivered in under a day.",
       },
@@ -291,8 +291,8 @@ export const caseStudies = [
           { src: '/images/years-of-designs-2.png', alt: '' },
         ],
         left: [
-          "Gamification wasn\'t a single project in Volt—it was a thread that ran through the sales app\'s entire history and we had a clear sense of what solar reps actually responded to and what stakeholders wanted to see after years of exploration. In fact, over the years I designed goal and stats dashboards, competition UIs, leaderboard variations, and reward concepts that had ended up in the design graveyard.",
-          "Late in 2025 the team had been tasked by internal leadership with prioritizing gamification again. As a team, we brainstormed and explored a robust suite of features including badges, streaks, daily activities, a prize locker, and journeys through levels. Eventually, we had our game plan all laid out -- we even had a full Epic with skeleton tickets in Jira and I had a few rough wireframe concepts sketched out.",
+          "Ideas and false starts for gamification features in Volt ran through the app\'s entire history. Over the years I designed goal and stats dashboards, competition UIs, leaderboard variations, and reward concepts that ended up deprioritized and in my design graveyard. So when the time it came to prioritize these features we had a clear sense of what solar reps actually responded to and what stakeholders wanted to see.",
+          "Late in 2025 the team was tasked by internal leadership with prioritizing gamification again. As a team, we brainstormed and explored a robust suite of features including badges, streaks, daily activities, a prize locker, and journeys through levels. Eventually, we had our game plan all laid out—we even had a full Epic with skeleton tickets in Jira and I had a few rough wireframe concepts sketched out.",
           "Then the curve-ball: the external stakeholders came to us with the Volt 2.0 rebrand ask and placed it at the top of their wish list. The good news: a swaggy new look would lend itself perfectly to the gamification features already in the works. The bad news: I needed to design, code, and release the rebrand first. So the backend dev work started while I juggled gamification, LMS prototyping, and the Volt redesign concepts simultaneously.",
         ],
         right: [],
@@ -306,7 +306,7 @@ export const caseStudies = [
         ],
         left: [
           "The thing I kept coming back to when thinking about gamification was this: effective digital rewards can be as simple as an animation, a sound, or haptic buzz. Duolingo built a $5 billion company on that premise. Slot machines have been exploiting it for decades.",
-          "My goal was to find every opportunity to celebrate the small stuff — a door knocked, an appointment set, an assist logged — with a moment of reward that felt good enough to keep them coming back.",
+          "My goal was to find every opportunity to celebrate the small stuff—a door knocked, an appointment set, an assist logged—with a moment of reward that felt good enough to keep them coming back.",
         ],
         right: [
           "The longer-term vision was a sales journey mode built into onboarding so new rep's first experience of Volt would be through a guided path, earning badges for completing the actions that would set them up to succeed: knocking their first door, setting their first appointment, getting their first assist. We didn't get that far but this philosophy shaped how I thought about the badge system we eventually built.",
@@ -321,12 +321,12 @@ export const caseStudies = [
           { src: '/images/gamification-badge-analysis.png', alt: '' },
         ],
         left: [
-          "Here\'s where the data comes in and things get interesting. A set of badges and thresholds had been signed off and was being already being programed into the backend system.",
-          "Once Volt 2.0 was released and I turned my focus to how the badge achievements would look and work, I started with the realistic functionality. I used our AI data query agent with access to our internal databases and Mixpanel and started asking how many of our actual users earn these badges? It turned out a significant portion of the thresholds were out of reach for the majority of our active users. Many would have taken years to achieve. That was clearly an issue and not aligned with my vision—badges that feel impossible to earn aren't motivating—they're demoralizing.",
+          "Here\'s where the data comes in and things get interesting. A set of badges and thresholds had been signed off and had already been programed into the backend system.",
+          "But once Volt 2.0 was released and I was able to turn my focus to how the badge achievements would look and work, I started with questioning how realistic the badge thresholds were. So I used our data agent and Querylab skill with access to our internal databases and Mixpanel and started asking: 'How many of our actual users can earn these badges?' It turned out a significant portion of the thresholds were out of reach for the majority of our active users. Many would have taken years to achieve. That was clearly an issue and not at all aligned with my vision—badges that feel impossible",
         ],
         right: [
-          "I also noticed the system was almost entirely oriented toward closers — reps who made sales. It had nothing meaningful for appointment setters -- a large and important part of our user base—and exactly the type of junior reps we needed to engage.",
-          "I brought these issues back to the team with the data to back it up. Then went through the badge set and kept analyzing and checking the data in order to ensure we had an achievable set of badges—some easy, some medium, some hard and some for the junior reps appointment setting at the top of the sales funnel.",
+          "to earn aren't motivating—they're demoralizing. I also noticed the system was almost entirely oriented toward closers or reps who made sales. It had nothing meaningful for appointment setters—a large and important part of our user base—and exactly the type of junior reps we needed to engage.",
+          "I brought these issues back to the team with the data to back it up. Then went through the badge set and kept analyzing and checking the data in order to ensure we had a more achievable set of badges—some easy, some medium, some hard and some for the junior reps appointment setting at the top of the sales funnel.",
         ],
       },
       {
@@ -342,8 +342,8 @@ export const caseStudies = [
           "Most of these features were well underway before Volt 2.0 had fully shipped—based off those early wireframes and AI design. That made them",
         ],
         right: [
-          "a natural test case: real features, real code, real developers—and a chance to apply the new design system and AI skills to work that was already in motion.",
-          "The new workflow changed everything. Instead of waiting for TestFlight builds, writing up feedback and waiting for another test build from a developer, I could pull the branch to my local environment, run my Volt skill and do a quick round of UI code polish before pushing them back just how I wanted it."
+          "a natural test case: real features, real code, real developers—and a chance to apply my new design system and AI skills to work already in motion.",
+          "The new workflow changed everything. Instead of waiting for TestFlight builds, writing up feedback and waiting for another test build from a developer, I could pull the branch to my local environment, run my Volt skill and do a quick round of UI code polish before pushing everything back exactly how I wanted it."
         ],
       },
     ],

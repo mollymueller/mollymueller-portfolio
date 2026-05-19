@@ -37,7 +37,7 @@ export default function AboutPage() {
             {/* Right: bio */}
             <div className={s.rightCol}>
               <p className={s.bio}>
-                <b>I'm an ai-empowered, systems-obsessed, and data-driven product designer with 8+ years experience.</b>
+                <b>I'm an AI-empowered, systems-obsessed, and data-driven product designer with 7+ years experience.</b>
               </p>
               <p className={s.bio}>
                 For the past few years I was a Senior Product Designer at Freedom Forever, one of the largest residential solar installers in the U.S. I led design for Volt, the company's proprietary mobile sales app, from MVP through two full redesigns.

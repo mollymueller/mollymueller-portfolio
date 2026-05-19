@@ -56,7 +56,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${bungee.variable} ${bungeeShade.variable} ${libreBaskerville.variable} ${openSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <footer style={{
+          textAlign: 'center',
+          padding: '24px 40px',
+          color: '#f5f5f5',
+          fontFamily: 'var(--font-open-sans)',
+          fontSize: '12px',
+          opacity: 0.5,
+        }}>
+          Copyright &copy; Molly Mueller 2026. Designed by Molly Mueller, built with Claude Code.
+        </footer>
+      </body>
     </html>
   );
 }
