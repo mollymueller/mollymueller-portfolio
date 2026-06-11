@@ -1,10 +1,15 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import s from './Lightbox.module.css';
 
 function LightboxOverlay({ src, alt, onClose }) {
   const [zoomed, setZoomed] = useState(false);
+  const [panReady, setPanReady] = useState(false); // space held
+  const [panning, setPanning] = useState(false);    // space held + dragging
+  const overlayRef = useRef(null);
+  const dragRef = useRef({ x: 0, y: 0, left: 0, top: 0 });
+  const didPanRef = useRef(false);
 
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
@@ -18,10 +23,68 @@ function LightboxOverlay({ src, alt, onClose }) {
     };
   }, [onClose]);
 
+  // Hold space to grab-and-pan while zoomed in (Figma-style)
+  useEffect(() => {
+    if (!zoomed) return;
+    const onKeyDown = (e) => {
+      if (e.code === 'Space') { e.preventDefault(); setPanReady(true); }
+    };
+    const onKeyUp = (e) => {
+      if (e.code === 'Space') { setPanReady(false); setPanning(false); }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('keyup', onKeyUp);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('keyup', onKeyUp);
+      setPanReady(false);
+      setPanning(false);
+    };
+  }, [zoomed]);
+
+  // Drag-to-pan listeners, active only while a pan drag is in progress
+  useEffect(() => {
+    if (!panning) return;
+    const onMove = (e) => {
+      const o = overlayRef.current;
+      if (!o) return;
+      didPanRef.current = true;
+      o.scrollLeft = dragRef.current.left - (e.clientX - dragRef.current.x);
+      o.scrollTop = dragRef.current.top - (e.clientY - dragRef.current.y);
+    };
+    const onUp = () => setPanning(false);
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+    return () => {
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
+    };
+  }, [panning]);
+
+  const startPan = (e) => {
+    if (!panReady) return;
+    e.preventDefault();
+    const o = overlayRef.current;
+    dragRef.current = { x: e.clientX, y: e.clientY, left: o.scrollLeft, top: o.scrollTop };
+    didPanRef.current = false;
+    setPanning(true);
+  };
+
+  // Don't close / toggle if the gesture was a space-pan
+  const guarded = (fn) => (e) => {
+    if (e) e.stopPropagation();
+    if (panReady || didPanRef.current) { didPanRef.current = false; return; }
+    fn();
+  };
+
+  const cursorClass = panning ? s.overlayGrabbing : panReady ? s.overlayGrab : '';
+
   return createPortal(
     <div
-      className={`${s.overlay} ${zoomed ? s.overlayZoomed : ''}`}
-      onClick={onClose}
+      ref={overlayRef}
+      className={`${s.overlay} ${zoomed ? s.overlayZoomed : ''} ${cursorClass}`}
+      onClick={guarded(onClose)}
+      onMouseDown={startPan}
     >
       <button className={s.closeBtn} onClick={onClose} aria-label="Close">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -33,6 +96,7 @@ function LightboxOverlay({ src, alt, onClose }) {
         className={s.zoomBtn}
         onClick={(e) => { e.stopPropagation(); setZoomed((z) => !z); }}
         aria-label={zoomed ? 'Zoom out' : 'Zoom in'}
+        title={zoomed ? 'Zoom out (hold space to pan)' : 'Zoom in'}
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2a2a2a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="7"/>
@@ -46,7 +110,8 @@ function LightboxOverlay({ src, alt, onClose }) {
         src={src}
         alt={alt || ''}
         className={`${s.lightboxImg} ${zoomed ? s.lightboxImgZoomed : ''}`}
-        onClick={(e) => { e.stopPropagation(); setZoomed((z) => !z); }}
+        onClick={guarded(() => setZoomed((z) => !z))}
+        draggable={false}
       />
     </div>,
     document.body

@@ -50,6 +50,21 @@
   -webkit-overflow-scrolling: touch;
 }
 
+/* Hold space to pan: turn the cursor into a grab hand (Figma-style).
+   The extra .lightboxImg selector outweighs the image's own zoom cursor. */
+.overlayGrab,
+.overlayGrab *,
+.overlayGrab .lightboxImg {
+  cursor: grab;
+}
+
+.overlayGrabbing,
+.overlayGrabbing *,
+.overlayGrabbing .lightboxImg {
+  cursor: grabbing;
+  user-select: none;
+}
+
 .lightboxImg {
   max-width: 90vw;
   max-height: 90vh;
