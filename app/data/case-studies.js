@@ -30,7 +30,7 @@ export const caseStudies = [
         },
         text: 'proprietary mobile sales app—from MVP through two full redesigns, and countless enhancements and feature releases. Recently I crossed into front-end AI engineering and built a design system in code, shipped the full redesign, and developed AI-powered tooling the team used to ship faster and implement design consistently.',
       },
-      'My case studies here are all related to Volt 2.0. The Volt 2.0 iteration  wasn\'t just about the new look and design system--it was about new AI workflows that empowered me to elevate the UX and UI of the shipped product, work faster and communicate better with PMs and developers, and dive into the data directly to correct misalignment between a gamification feature and actual user behavior.',
+      'My case studies here are all related to Volt 2.0. The Volt 2.0 iteration  wasn\'t just about the new look and design system—it was about new AI workflows that empowered me to elevate the UX and UI of the shipped product, work faster and communicate better with PMs and developers, and dive into the data directly to correct misalignment between a gamification feature and actual user behavior.',
     ],
     image: '/images/volt-hero.webp',
     imageAlt: 'Volt 2.0 — a suite of screens from the redesigned mobile app',

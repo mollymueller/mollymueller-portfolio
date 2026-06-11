@@ -42,18 +42,38 @@
   cursor: zoom-out;
 }
 
+/* When zoomed, the overlay scrolls so the user can pan around the image */
+.overlayZoomed {
+  display: block;
+  overflow: auto;
+  cursor: zoom-out;
+  -webkit-overflow-scrolling: touch;
+}
+
 .lightboxImg {
   max-width: 90vw;
   max-height: 90vh;
   object-fit: contain;
   border-radius: 4px;
-  cursor: default;
+  cursor: zoom-in;
+}
+
+/* Blown up beyond viewport so fine print becomes readable */
+.lightboxImgZoomed {
+  max-width: none;
+  max-height: none;
+  width: 180vw;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0;
+  cursor: zoom-out;
 }
 
 .closeBtn {
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
+  z-index: 1001;
   background: rgba(0, 0, 0, 0.1);
   border: none;
   border-radius: 50%;
@@ -68,5 +88,27 @@
 }
 
 .closeBtn:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.zoomBtn {
+  position: fixed;
+  top: 20px;
+  right: 72px;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+  z-index: 1001;
+}
+
+.zoomBtn:hover {
   background: rgba(0, 0, 0, 0.2);
 }
